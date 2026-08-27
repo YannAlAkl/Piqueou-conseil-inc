@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* ---------- Fond ---------- */
+
+    body {
+        @apply m-0 flex min-h-screen items-center justify-center bg-pq-login px-4 py-8 font-sans antialiased;
+    }
+
+    /* ---------- Carte de connexion et d'inscription ---------- */
+
+    .login-box,
+    .form-container {
+        @apply w-full max-w-[420px] rounded-2xl border-t-4 border-pq-green bg-white px-10 py-9 shadow-pq-login;
+    }
+
+    .form-container {
+        @apply max-w-[620px];
+    }
+
+    .login-box h1,
+    .form-header h1,
+    .form-header h2 {
+        @apply mb-2 text-center font-heading text-[1.7rem] font-bold text-pq-heading;
+    }
+
+    .form-header {
+        @apply mb-6 text-center;
+    }
+
+    .form-header p {
+        @apply text-[0.92rem] text-pq-text;
+    }
+
+    /* ---------- Champs ---------- */
+
+    .form-group {
+        @apply mb-[18px];
+    }
+
+    .form-grid {
+        @apply grid grid-cols-1 gap-4 sm:grid-cols-2;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .form-group label {
+        @apply mb-1.5 block text-[0.88rem] font-semibold text-pq-heading;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+        @apply box-border w-full rounded-[10px] border border-pq-border px-3.5 py-3 font-sans text-[0.92rem] text-pq-text transition duration-200;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        @apply border-pq-green shadow-pq-focus outline-none;
+    }
+
+    /* ---------- Messages ---------- */
+
+    .error-message {
+        @apply mt-1 text-[0.82rem] text-red-600;
+    }
+
+    .status-message {
+        @apply mb-3.5 rounded-lg px-3 py-2 text-[0.9rem] text-green-700;
+        background: rgba(34, 197, 94, 0.12);
+    }
+
+    /* ---------- Options ---------- */
+
+    .remember-me,
+    .checkbox-group {
+        @apply mb-4 flex items-center gap-1.5 text-[0.88rem] text-pq-text;
+    }
+
+    .remember-me input,
+    .checkbox-group input {
+        accent-color: #22c55e;
+    }
+
+    /* ---------- Actions ---------- */
+
+    .form-actions {
+        @apply mt-2 flex flex-wrap items-center justify-between gap-3;
+    }
+
+    .form-actions a {
+        @apply text-[0.86rem] text-pq-teal no-underline transition duration-200;
+    }
+
+    .form-actions a:hover {
+        @apply text-pq-green underline;
+    }
+
+    /* ---------- Boutons ---------- */
+
+    .btn-login,
+    .submit-btn {
+        @apply cursor-pointer rounded-pill border-0 bg-pq-green px-[30px] py-3 font-sans text-[0.92rem] font-semibold text-white transition-all duration-300;
+    }
+
+    .btn-login:hover,
+    .submit-btn:hover {
+        @apply -translate-y-px bg-pq-green-dark shadow-pq-green-lg;
+    }
+
+    .submit-btn {
+        @apply mt-2.5 w-full;
+    }
+
+    .logout-box {
+        @apply text-center;
+    }
+}
+
+@media (max-width: 560px) {
+    .login-box, .form-container { padding-left: 24px; padding-right: 24px; padding-top: 28px; padding-bottom: 28px; }
+}

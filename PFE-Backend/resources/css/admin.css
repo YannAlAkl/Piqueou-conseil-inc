@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* ---------- Fond ---------- */
+
+    body.admin-page {
+        @apply min-h-screen bg-pq-bg font-sans text-pq-text antialiased;
+    }
+
+    /* ---------- Navigation ---------- */
+
+    .admin-nav {
+        @apply bg-pq-nav shadow-pq-nav py-3.5;
+        border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+    }
+
+    .admin-nav-row {
+        @apply flex items-center justify-between;
+    }
+
+    .admin-brand {
+        @apply font-heading text-[1.35rem] font-bold text-white tracking-[0.3px] no-underline;
+    }
+
+    .admin-brand:hover {
+        @apply text-pq-green;
+    }
+
+    .admin-nav-links {
+        @apply flex items-center gap-6;
+    }
+
+    .admin-nav-link {
+        @apply relative py-1.5 px-0.5 text-[0.92rem] font-medium no-underline transition-colors duration-300;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .admin-nav-link::before {
+        @apply absolute left-0 h-0.5 w-0 rounded-sm bg-pq-underline transition-all duration-300;
+        content: "";
+        bottom: -2px;
+    }
+
+    .admin-nav-link:hover {
+        @apply text-white;
+    }
+
+    .admin-nav-link:hover::before,
+    .admin-nav-link-active::before {
+        @apply w-full;
+    }
+
+    .admin-nav-link-active {
+        @apply text-white;
+    }
+
+    .admin-user {
+        @apply flex items-center gap-4 text-[0.9rem];
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .admin-logout {
+        @apply cursor-pointer rounded-pill px-4 py-1.5 text-[0.85rem] font-medium text-white transition duration-300;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .admin-logout:hover {
+        background: rgba(34, 197, 94, 0.18);
+        border-color: rgba(34, 197, 94, 0.45);
+    }
+
+    /* ---------- En-tete ---------- */
+
+    .admin-header {
+        @apply bg-pq-header py-10;
+        border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+
+    .admin-header-row {
+        @apply flex flex-wrap items-center justify-between gap-4;
+    }
+
+    .admin-title {
+        @apply m-0 font-heading text-[1.9rem] font-bold text-white;
+    }
+
+    .admin-subtitle {
+        @apply mt-1 text-[0.98rem];
+        color: rgba(203, 213, 225, 0.9);
+    }
+
+    /* ---------- Conteneur ---------- */
+
+    .admin-container {
+        @apply mx-auto max-w-[1200px] px-5;
+    }
+
+    .admin-content {
+        @apply py-8;
+    }
+
+    /* ---------- Cartes ---------- */
+
+    .admin-card {
+        @apply mb-6 rounded-[14px] border border-pq-border bg-white p-6 shadow-pq-card;
+    }
+
+    .admin-card-title {
+        @apply mb-3 font-heading text-[1.3rem] font-bold text-pq-heading;
+    }
+
+    /* ---------- Statistiques ---------- */
+
+    .admin-stats {
+        @apply mb-6 grid gap-[18px];
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .admin-stat {
+        @apply rounded-xl border border-pq-border border-l-4 border-l-pq-green bg-white p-5 shadow-pq-stat transition duration-300;
+    }
+
+    .admin-stat:hover {
+        @apply -translate-y-[3px] shadow-pq-stat-hover;
+    }
+
+    .admin-stat-value {
+        @apply font-heading text-[2rem] font-bold leading-tight text-pq-teal;
+    }
+
+    .admin-stat-label {
+        @apply mt-1 text-[0.86rem] text-pq-text;
+    }
+
+    /* ---------- Boutons et actions ---------- */
+
+    .admin-btn,
+    .admin-action {
+        @apply inline-block cursor-pointer rounded-pill border-2 border-transparent px-[22px] py-2.5 text-[0.86rem] font-semibold no-underline transition-all duration-300;
+    }
+
+    .admin-btn-green, .admin-action-green,
+    .admin-btn-blue, .admin-action-blue {
+        @apply border-pq-green bg-pq-green text-white;
+    }
+
+    .admin-btn-green:hover, .admin-action-green:hover,
+    .admin-btn-blue:hover, .admin-action-blue:hover {
+        @apply -translate-y-px border-pq-green-dark bg-pq-green-dark shadow-pq-green;
+    }
+
+    .admin-btn-gray, .admin-action {
+        @apply border-2 border-pq-teal bg-transparent text-pq-teal;
+    }
+
+    .admin-btn-gray:hover {
+        @apply bg-pq-teal text-white;
+    }
+
+    .admin-btn-yellow, .admin-action-yellow {
+        @apply border-yellow-500 bg-yellow-500 text-white;
+    }
+
+    .admin-btn-yellow:hover, .admin-action-yellow:hover {
+        @apply border-yellow-600 bg-yellow-600;
+    }
+
+    .admin-btn-red, .admin-action-red {
+        @apply border-2 border-red-600 bg-transparent text-red-600;
+    }
+
+    .admin-btn-red:hover, .admin-action-red:hover {
+        @apply bg-red-600 text-white;
+    }
+
+    .admin-form-actions {
+        @apply mt-5 flex flex-wrap gap-3;
+    }
+
+    /* ---------- Formulaires ---------- */
+
+    .admin-form-grid {
+        @apply grid grid-cols-1 gap-[18px] md:grid-cols-2;
+    }
+
+    .admin-label {
+        @apply mb-1.5 block text-[0.88rem] font-semibold text-pq-heading;
+    }
+
+    .admin-legend {
+        @apply mb-2.5 font-heading text-[1.05rem] font-bold text-pq-heading;
+    }
+
+    .admin-legend-item {
+        @apply mr-3.5 inline-flex items-center gap-1.5 text-[0.82rem] text-pq-text;
+    }
+
+    .admin-input,
+    .admin-select {
+        @apply w-full rounded-[10px] border border-pq-border bg-white px-3.5 py-2.5 font-sans text-[0.9rem] text-pq-text transition duration-200;
+    }
+
+    .admin-input:focus,
+    .admin-select:focus {
+        @apply border-pq-green shadow-pq-focus outline-none;
+    }
+
+    .admin-help {
+        @apply mt-1 text-[0.8rem] text-slate-500;
+    }
+
+    .admin-form-error {
+        @apply mt-1 text-[0.8rem] text-red-600;
+    }
+
+    .admin-checkbox {
+        accent-color: #22c55e;
+    }
+
+    /* ---------- Tableaux ---------- */
+
+    .admin-table-box {
+        @apply overflow-x-auto rounded-[14px] border border-pq-border bg-white shadow-pq-table;
+    }
+
+    .admin-table {
+        @apply w-full min-w-[820px] border-collapse text-[0.9rem];
+    }
+
+    .admin-table thead {
+        @apply bg-pq-dark;
+    }
+
+    .admin-table thead th {
+        @apply whitespace-nowrap px-[18px] py-3.5 text-left text-[0.82rem] font-semibold uppercase tracking-[0.3px] text-white;
+    }
+
+    .admin-table tbody td {
+        @apply border-t border-pq-border px-[18px] py-3 align-top text-pq-text;
+    }
+
+    .admin-table tbody tr:hover {
+        background: rgba(34, 197, 94, 0.05);
+    }
+
+    .admin-table-empty {
+        @apply p-8 text-center text-slate-400;
+    }
+
+    /* Colonne Actions collee a droite pendant le defilement horizontal */
+
+    .admin-table thead th:last-child,
+    .admin-table tbody td:last-child {
+        @apply sticky right-0 z-[2];
+    }
+
+    .admin-table thead th:last-child {
+        @apply bg-pq-dark;
+    }
+
+    .admin-table tbody td:last-child {
+        @apply border-l border-pq-border bg-white;
+    }
+
+    .admin-table tbody tr:hover td:last-child {
+        background: #f6fdf8;
+    }
+
+    .admin-table tbody td.admin-table-empty {
+        @apply static border-l-0;
+    }
+
+    /* Actions compactes dans les tableaux uniquement */
+
+    .admin-table .admin-action {
+        @apply border px-2.5 py-1.5 text-[0.8rem] leading-none;
+    }
+
+    .admin-table .admin-btn {
+        @apply px-3.5 py-1.5 text-[0.8rem];
+    }
+
+    .admin-table .admin-select {
+        @apply min-w-[150px] px-2.5 py-1.5 text-[0.82rem];
+    }
+
+    /* ---------- Badges ---------- */
+
+    .admin-badge {
+        @apply inline-flex items-center gap-1.5 rounded-pill px-3 py-1 text-[0.76rem] font-semibold;
+    }
+
+    .admin-badge-dot {
+        @apply inline-block h-[7px] w-[7px] rounded-full;
+    }
+
+    .admin-badge-green {
+        @apply text-green-700;
+        background: rgba(34, 197, 94, 0.15);
+    }
+
+    .admin-badge-green .admin-badge-dot {
+        @apply bg-pq-green;
+    }
+
+    .admin-badge-yellow {
+        @apply text-yellow-700;
+        background: rgba(234, 179, 8, 0.15);
+    }
+
+    .admin-badge-yellow .admin-badge-dot {
+        @apply bg-yellow-500;
+    }
+
+    .admin-badge-red {
+        @apply text-red-700;
+        background: rgba(220, 38, 38, 0.12);
+    }
+
+    .admin-badge-red .admin-badge-dot {
+        @apply bg-red-600;
+    }
+
+    .admin-badge-blue {
+        @apply text-pq-teal;
+        background: rgba(1, 136, 128, 0.15);
+    }
+
+    .admin-badge-gray {
+        @apply text-slate-600;
+        background: rgba(100, 116, 139, 0.15);
+    }
+
+    /* ---------- Pastilles de statut ---------- */
+
+    .pastille-verte,
+    .pastille-jaune,
+    .pastille-rouge {
+        @apply inline-block h-[0.6rem] w-[0.6rem] shrink-0 rounded-full align-middle;
+    }
+
+    .pastille-verte {
+        @apply bg-pq-green shadow-pq-dot-green;
+    }
+
+    .pastille-jaune {
+        @apply bg-yellow-500 shadow-pq-dot-yellow;
+    }
+
+    .pastille-rouge {
+        @apply bg-red-600 shadow-pq-dot-red;
+    }
+
+    /* ---------- Fiches de details ---------- */
+
+    .admin-info-list {
+        @apply grid gap-2.5;
+    }
+
+    .admin-info-label {
+        @apply text-[0.85rem] font-semibold text-pq-heading;
+    }
+
+    .admin-info-value {
+        @apply text-pq-text;
+    }
+
+    /* ---------- Pagination ---------- */
+
+    .admin-pagination {
+        @apply mt-6 flex flex-wrap justify-center gap-1.5;
+    }
+
+    .admin-pagination a,
+    .admin-pagination span {
+        @apply rounded-lg border border-pq-border px-3 py-1.5 text-[0.86rem] text-pq-teal no-underline transition duration-200;
+    }
+
+    .admin-pagination a:hover {
+        @apply border-pq-green bg-pq-green text-white;
+    }
+
+    /* ---------- Alertes ---------- */
+
+    .admin-alert-success {
+        @apply mb-4 rounded-[10px] px-[18px] py-3.5 font-medium text-green-700;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
+    .admin-alert-error {
+        @apply mb-4 rounded-[10px] px-[18px] py-3.5 font-medium text-red-700;
+        background: rgba(220, 38, 38, 0.1);
+        border: 1px solid rgba(220, 38, 38, 0.3);
+    }
+
+    .admin-alert-error ul {
+        @apply list-inside list-disc;
+    }
+
+    /* ---------- Fenetre de confirmation ---------- */
+
+    .admin-modal {
+        @apply fixed inset-0 z-50 hidden items-center justify-center p-4;
+        background: rgba(15, 23, 42, 0.55);
+    }
+
+    .admin-modal-open {
+        @apply flex;
+    }
+
+    .admin-modal-box {
+        @apply w-full max-w-[430px] rounded-[16px] border-t-4 border-pq-green bg-white p-7 text-center shadow-pq-login;
+        animation: admin-modal-in 0.18s ease-out;
+    }
+
+    .admin-modal-icon {
+        @apply mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full text-[1.6rem];
+    }
+
+    .admin-modal-icon-success {
+        @apply text-pq-green;
+        background: rgba(34, 197, 94, 0.14);
+    }
+
+    .admin-modal-icon-danger {
+        @apply text-red-600;
+        background: rgba(220, 38, 38, 0.12);
+    }
+
+    .admin-modal-title {
+        @apply mb-2 font-heading text-[1.25rem] font-bold text-pq-heading;
+    }
+
+    .admin-modal-text {
+        @apply text-[0.92rem] leading-relaxed text-pq-text;
+    }
+
+    .admin-modal-actions {
+        @apply mt-7 flex justify-center gap-3;
+    }
+}
+
+@keyframes admin-modal-in {
+    from { opacity: 0; transform: translateY(-12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 992px) {
+    .admin-header-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+@media (max-width: 768px) {
+    .admin-nav-row { flex-wrap: wrap; gap: 12px; }
+    .admin-nav-links { gap: 1rem; flex-wrap: wrap; }
+    .admin-title { font-size: 1.5rem; }
+    .admin-table { font-size: 0.82rem; }
+    .admin-table thead th,
+    .admin-table tbody td { padding: 10px 12px; }
+}
+
+@media (max-width: 640px) {
+    .admin-container { padding-left: 12px; padding-right: 12px; }
+    .admin-table { min-width: 700px; }
+    .admin-table .admin-action { padding: 6px 9px; }
+}
+
+.admin-table-box::-webkit-scrollbar { height: 8px; }
+.admin-table-box::-webkit-scrollbar-track { background: #f1f5f9; }
+.admin-table-box::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.admin-table-box::-webkit-scrollbar-thumb:hover { background: #94a3b8; }

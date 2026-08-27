@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* ---------- Fond ---------- */
+
+    body.client-page {
+        @apply min-h-screen bg-pq-bg font-sans text-pq-text antialiased;
+    }
+
+    /* ---------- Navigation ---------- */
+
+    .client-nav {
+        @apply bg-pq-nav shadow-pq-nav py-3.5;
+        border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+    }
+
+    .client-nav-row {
+        @apply flex items-center justify-between;
+    }
+
+    .client-brand {
+        @apply font-heading text-[1.35rem] font-bold text-white tracking-[0.3px] no-underline;
+    }
+
+    .client-brand:hover {
+        @apply text-pq-green;
+    }
+
+    .client-nav-links {
+        @apply flex items-center gap-6;
+    }
+
+    .client-nav-link {
+        @apply relative py-1.5 px-0.5 text-[0.95rem] font-medium no-underline transition-colors duration-300;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .client-nav-link::before {
+        @apply absolute left-0 h-0.5 w-0 rounded-sm bg-pq-underline transition-all duration-300;
+        content: "";
+        bottom: -2px;
+    }
+
+    .client-nav-link:hover {
+        @apply text-white;
+    }
+
+    .client-nav-link:hover::before,
+    .client-nav-link-active::before {
+        @apply w-full;
+    }
+
+    .client-nav-link-active {
+        @apply text-white;
+    }
+
+    .client-user {
+        @apply flex items-center gap-4 text-[0.9rem];
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .client-logout {
+        @apply cursor-pointer rounded-pill px-4 py-1.5 text-[0.85rem] font-medium text-white transition duration-300;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .client-logout:hover {
+        background: rgba(34, 197, 94, 0.18);
+        border-color: rgba(34, 197, 94, 0.45);
+    }
+
+    /* ---------- En-tete ---------- */
+
+    .client-header {
+        @apply bg-pq-header py-10;
+        border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+
+    .client-title {
+        @apply m-0 font-heading text-[2rem] font-bold text-white;
+    }
+
+    .client-subtitle {
+        @apply mt-1.5 text-base;
+        color: rgba(203, 213, 225, 0.9);
+    }
+
+    /* ---------- Conteneur ---------- */
+
+    .client-container {
+        @apply mx-auto max-w-[1140px] px-5;
+    }
+
+    .client-content {
+        @apply py-8;
+    }
+
+    /* ---------- Cartes ---------- */
+
+    .client-card {
+        @apply mb-6 rounded-[14px] border border-pq-border bg-white p-7 shadow-pq-card transition duration-300;
+    }
+
+    .client-card:hover {
+        @apply -translate-y-0.5 shadow-pq-card-hover;
+    }
+
+    .client-card-title {
+        @apply mb-3 font-heading text-[1.4rem] font-bold text-pq-heading;
+    }
+
+    /* ---------- Boutons ---------- */
+
+    .client-btn {
+        @apply inline-block cursor-pointer rounded-pill border-2 border-transparent px-6 py-2.5 text-[0.9rem] font-semibold no-underline transition-all duration-300;
+    }
+
+    .client-btn-blue {
+        @apply border-pq-green bg-pq-green text-white;
+    }
+
+    .client-btn-blue:hover {
+        @apply -translate-y-px border-pq-green-dark bg-pq-green-dark shadow-pq-green;
+    }
+
+    .client-btn-gray {
+        @apply border-2 border-pq-teal bg-transparent text-pq-teal;
+    }
+
+    .client-btn-gray:hover {
+        @apply bg-pq-teal text-white;
+    }
+
+    .client-form-actions {
+        @apply mt-5 flex flex-wrap gap-3;
+    }
+
+    /* ---------- Formulaires ---------- */
+
+    .client-label {
+        @apply mt-4 mb-1.5 block text-[0.9rem] font-semibold text-pq-heading;
+    }
+
+    .client-required {
+        @apply text-red-600;
+    }
+
+    .client-textarea,
+    .client-page input[type="text"],
+    .client-page input[type="email"],
+    .client-page input[type="password"],
+    .client-page select {
+        @apply w-full rounded-[10px] border border-pq-border bg-white px-3.5 py-2.5 font-sans text-[0.92rem] text-pq-text transition duration-200;
+    }
+
+    .client-textarea:focus,
+    .client-page input:focus,
+    .client-page select:focus {
+        @apply border-pq-green shadow-pq-focus outline-none;
+    }
+
+    /* ---------- Questionnaire ---------- */
+
+    .client-question {
+        @apply mb-4 rounded-xl border border-pq-border bg-white p-5 transition duration-200;
+    }
+
+    .client-question:hover {
+        border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .client-question-title {
+        @apply mb-3 text-[1.05rem] font-semibold text-pq-heading;
+    }
+
+    .client-option {
+        @apply flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm text-pq-text transition duration-200;
+    }
+
+    .client-option:hover {
+        background: rgba(34, 197, 94, 0.07);
+    }
+
+    .client-reco {
+        @apply mt-3 rounded-lg border-l-4 border-pq-teal p-3.5 text-sm text-pq-heading;
+        background: rgba(1, 136, 128, 0.08);
+    }
+
+    /* ---------- Badges ---------- */
+
+    .client-badge {
+        @apply inline-block rounded-pill px-3 py-1 text-[0.78rem] font-semibold tracking-[0.2px];
+    }
+
+    .client-badge-green {
+        @apply text-green-700;
+        background: rgba(34, 197, 94, 0.15);
+    }
+
+    .client-badge-yellow {
+        @apply text-yellow-700;
+        background: rgba(234, 179, 8, 0.15);
+    }
+
+    .client-badge-blue {
+        @apply text-pq-teal;
+        background: rgba(1, 136, 128, 0.15);
+    }
+
+    .client-badge-gray {
+        @apply text-slate-600;
+        background: rgba(100, 116, 139, 0.15);
+    }
+
+    /* ---------- Alertes ---------- */
+
+    .client-alert-success {
+        @apply mb-4 rounded-[10px] px-[18px] py-3.5 font-medium text-green-700;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
+    .client-alert-error {
+        @apply mb-4 rounded-[10px] px-[18px] py-3.5 font-medium text-red-700;
+        background: rgba(220, 38, 38, 0.1);
+        border: 1px solid rgba(220, 38, 38, 0.3);
+    }
+    .client-modal {
+        @apply fixed inset-0 z-50 hidden items-center justify-center p-4;
+        background: rgba(15, 23, 42, 0.55);
+    }
+
+    .client-modal-box {
+        @apply w-full max-w-[430px] rounded-[16px] border-t-4 border-pq-green bg-white p-7 text-center;
+        box-shadow: 0 18px 45px rgba(0, 58, 54, 0.18);
+    }
+
+    .client-modal-title {
+        @apply mb-2 font-heading text-[1.25rem] font-bold text-pq-heading;
+    }
+
+    .client-modal-text {
+        @apply text-[0.92rem] leading-relaxed text-pq-text;
+    }
+
+    .client-modal-actions {
+        @apply mt-7 flex justify-center gap-3;
+    }
+}
+
+@media (max-width: 768px) {
+    .client-nav-row { flex-wrap: wrap; gap: 12px; }
+    .client-nav-links { gap: 1rem; flex-wrap: wrap; }
+    .client-title { font-size: 1.5rem; }
+    .client-header { padding-top: 28px; padding-bottom: 28px; }
+    .client-container { padding-left: 12px; padding-right: 12px; }
+}

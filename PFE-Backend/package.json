@@ -1,0 +1,22 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "concurrently \"npm run dev:assets\" \"php artisan serve\"",
+        "dev:assets": "vite",
+        "build": "vite build",
+        "css": "tailwindcss -i resources/css/admin.css -o public/css/admin.css --minify && tailwindcss -i resources/css/client.css -o public/css/client.css --minify && tailwindcss -i resources/css/analyst.css -o public/css/analyst.css --minify && tailwindcss -i resources/css/login.css -o public/css/login.css --minify"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.2",
+        "@tailwindcss/vite": "^4.0.0",
+        "alpinejs": "^3.4.2",
+        "autoprefixer": "^10.4.2",
+        "concurrently": "^9.2.4",
+        "laravel-vite-plugin": "^3.1",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.1.0",
+        "vite": "^8.0.0"
+    }
+}

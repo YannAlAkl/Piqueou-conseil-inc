@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* ---------- Fond ---------- */
+
+    body.analyst-page {
+        @apply min-h-screen bg-pq-bg font-sans text-pq-text antialiased;
+    }
+
+    /* ---------- Navigation ---------- */
+
+    .analyst-nav {
+        @apply bg-pq-nav shadow-pq-nav py-3.5;
+        border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+    }
+
+    .analyst-nav-row {
+        @apply flex items-center justify-between;
+    }
+
+    .analyst-brand {
+        @apply font-heading text-[1.35rem] font-bold text-white tracking-[0.3px] no-underline;
+    }
+
+    .analyst-brand:hover {
+        @apply text-pq-green;
+    }
+
+    .analyst-nav-links {
+        @apply hidden sm:flex sm:items-center sm:gap-6;
+    }
+
+    .analyst-nav-link {
+        @apply relative py-1.5 px-0.5 text-[0.95rem] font-medium no-underline transition-colors duration-300;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .analyst-nav-link::before {
+        @apply absolute left-0 h-0.5 w-0 rounded-sm bg-pq-underline transition-all duration-300;
+        content: "";
+        bottom: -2px;
+    }
+
+    .analyst-nav-link:hover {
+        @apply text-white;
+    }
+
+    .analyst-nav-link:hover::before,
+    .analyst-nav-link-active::before {
+        @apply w-full;
+    }
+
+    .analyst-nav-link-active {
+        @apply text-white;
+    }
+
+    .analyst-user {
+        @apply flex items-center gap-4 text-[0.9rem];
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .analyst-logout {
+        @apply cursor-pointer rounded-pill px-4 py-1.5 text-[0.85rem] font-medium text-white transition duration-300;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .analyst-logout:hover {
+        background: rgba(34, 197, 94, 0.18);
+        border-color: rgba(34, 197, 94, 0.45);
+    }
+
+    /* ---------- En-tete ---------- */
+
+    .analyst-header {
+        @apply bg-pq-header py-10;
+        border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+
+    .analyst-title {
+        @apply m-0 font-heading text-[2rem] font-bold text-white;
+    }
+
+    .analyst-subtitle {
+        @apply mt-1.5 text-base;
+        color: rgba(203, 213, 225, 0.9);
+    }
+
+    /* ---------- Conteneur ---------- */
+
+    .analyst-container {
+        @apply mx-auto max-w-[1140px] px-5;
+    }
+
+    .analyst-content {
+        @apply py-8;
+    }
+
+    /* ---------- Cartes ---------- */
+
+    .analyst-card {
+        @apply mb-6 rounded-[14px] border border-pq-border bg-white p-7 shadow-pq-card transition duration-300;
+    }
+
+    .analyst-card:hover {
+        @apply -translate-y-0.5 shadow-pq-card-hover;
+    }
+
+    .analyst-card-title {
+        @apply mb-3 font-heading text-[1.4rem] font-bold text-pq-heading;
+    }
+
+    .analyst-meta {
+        @apply mt-1 text-[0.82rem] text-slate-500;
+    }
+
+    /* ---------- Compteur du tableau de bord ---------- */
+
+    .analyst-stat {
+        @apply rounded-xl border border-pq-border border-l-4 border-l-pq-green bg-white p-5 shadow-pq-stat;
+    }
+
+    .analyst-stat-value {
+        @apply font-heading text-[2rem] font-bold leading-tight text-pq-teal;
+    }
+
+    .analyst-stat-label {
+        @apply mt-1 text-[0.86rem] text-pq-text;
+    }
+
+    /* ---------- Boutons ---------- */
+
+    .analyst-btn {
+        @apply inline-block cursor-pointer rounded-pill border-2 border-transparent px-6 py-2.5 text-[0.9rem] font-semibold no-underline transition-all duration-300;
+    }
+
+    .analyst-btn-blue {
+        @apply border-pq-green bg-pq-green text-white;
+    }
+
+    .analyst-btn-blue:hover {
+        @apply -translate-y-px border-pq-green-dark bg-pq-green-dark shadow-pq-green;
+    }
+
+    .analyst-btn-gray {
+        @apply border-2 border-pq-teal bg-transparent text-pq-teal;
+    }
+
+    .analyst-btn-gray:hover {
+        @apply bg-pq-teal text-white;
+    }
+
+    .analyst-form-actions {
+        @apply mt-5 flex flex-wrap gap-3;
+    }
+
+    .analyst-back {
+        @apply mb-4 inline-block text-[0.9rem] font-medium text-pq-teal no-underline;
+    }
+
+    .analyst-back:hover {
+        @apply text-pq-green underline;
+    }
+
+    /* ---------- Formulaires ---------- */
+
+    .analyst-label {
+        @apply mt-4 mb-1.5 block text-[0.9rem] font-semibold text-pq-heading;
+    }
+
+    .analyst-required {
+        @apply text-red-600;
+    }
+
+    .analyst-textarea {
+        @apply w-full rounded-[10px] border border-pq-border bg-white px-3.5 py-2.5 font-sans text-[0.92rem] text-pq-text transition duration-200;
+    }
+
+    .analyst-textarea:focus {
+        @apply border-pq-green shadow-pq-focus outline-none;
+    }
+
+    .analyst-form-error {
+        @apply mt-1 text-[0.8rem] text-red-600;
+    }
+
+    /* ---------- Questions et reponses ---------- */
+
+    .analyst-question {
+        @apply mb-4 rounded-xl border border-pq-border bg-white p-5 transition duration-200;
+    }
+
+    .analyst-question:hover {
+        border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .analyst-question-title {
+        @apply mb-3 text-[1.05rem] font-semibold text-pq-heading;
+    }
+
+    .analyst-answer {
+        @apply rounded-lg border-l-4 border-pq-green p-3.5 text-[0.92rem] text-pq-heading;
+        background: rgba(34, 197, 94, 0.07);
+    }
+
+    .analyst-answer-empty {
+        @apply rounded-lg border-l-4 border-slate-300 bg-slate-50 p-3.5 text-[0.92rem] italic text-slate-400;
+    }
+
+    .analyst-comment {
+        @apply mt-3 rounded-lg border-l-4 border-pq-teal p-3 text-[0.85rem] text-pq-heading;
+        background: rgba(1, 136, 128, 0.08);
+    }
+
+    /* ---------- Badges ---------- */
+
+    .analyst-badge {
+        @apply inline-block rounded-pill px-3 py-1 text-[0.78rem] font-semibold tracking-[0.2px];
+    }
+
+    .analyst-badge-green {
+        @apply text-green-700;
+        background: rgba(34, 197, 94, 0.15);
+    }
+
+    .analyst-badge-yellow {
+        @apply text-yellow-700;
+        background: rgba(234, 179, 8, 0.15);
+    }
+
+    .analyst-badge-blue {
+        @apply text-pq-teal;
+        background: rgba(1, 136, 128, 0.15);
+    }
+
+    .analyst-badge-gray {
+        @apply text-slate-600;
+        background: rgba(100, 116, 139, 0.15);
+    }
+
+    /* ---------- Alertes ---------- */
+
+    .analyst-alert-success {
+        @apply mb-4 rounded-[10px] px-[18px] py-3.5 font-medium text-green-700;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
+    .analyst-alert-error {
+        @apply mb-4 rounded-[10px] px-[18px] py-3.5 font-medium text-red-700;
+        background: rgba(220, 38, 38, 0.1);
+        border: 1px solid rgba(220, 38, 38, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    .analyst-nav-row { flex-wrap: wrap; gap: 12px; }
+    .analyst-title { font-size: 1.5rem; }
+    .analyst-header { padding-top: 28px; padding-bottom: 28px; }
+    .analyst-container { padding-left: 12px; padding-right: 12px; }
+}
