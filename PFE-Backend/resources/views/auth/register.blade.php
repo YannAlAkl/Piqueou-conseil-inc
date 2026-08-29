@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inscription - Piqueou Consulting</title>
+    <title>Inscription - PIQUÉOU Conseil Inc.</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 

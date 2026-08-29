@@ -6,7 +6,7 @@
 
     <p>Bonjour {{ $user->first_name }},</p>
 
-    <p>Un compte analyste vient d'être créé pour vous sur le portail Piqueou Conseil.</p>
+    <p>Un compte analyste vient d'être créé pour vous sur le portail PIQUÉOU Conseil Inc.</p>
 
     <ul>
         <li>Email : {{ $user->email }}</li>

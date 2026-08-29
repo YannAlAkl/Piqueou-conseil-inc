@@ -18,6 +18,6 @@
 
     <p>Merci de votre confiance.</p>
 
-    <p>L'équipe Piqueou Conseil</p>
+    <p>L'équipe PIQUÉOU Conseil Inc.</p>
 
 @endsection

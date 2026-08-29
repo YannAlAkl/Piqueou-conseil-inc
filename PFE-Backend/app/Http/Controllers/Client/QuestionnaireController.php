@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Questionnaire;
+use App\Models\User;
 use App\Models\UserQuestionnaire;
 use App\Models\UserQuestionnaireAnswer;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\Auth;
+use App\Mail\QuestionnaireSubmittedMail;
+use Illuminate\Support\Facades\Mail;
 class QuestionnaireController extends Controller
 {
     public function index()
@@ -17,8 +18,8 @@ class QuestionnaireController extends Controller
         $questionnaires = Questionnaire::where('status', 'published')
             ->orderBy('title')
             ->get();
-            
-           
+
+
 
         $mesSoumissions = UserQuestionnaire::where('user_id', auth::id())
             ->get()
@@ -121,7 +122,19 @@ class QuestionnaireController extends Controller
         $soumission->submitted_at = now();
         $soumission->save();
 
-        return redirect()->route('client.questionnaire.show', $questionnaire->id)
-            ->with('success', 'Votre questionnaire a bien été envoyé.');
+        $admin = User::whereHas('roles', function ($q) {
+    return $q->where('name', 'admin');
+    })->first();
+
+$message = 'Votre questionnaire a bien été envoyé.';
+
+try {
+    Mail::to($admin->email)->send(new QuestionnaireSubmittedMail($soumission));
+} catch (\Exception $e) {
+    $message = 'Votre questionnaire a bien été envoyé, mais l\'email n\'a pas pu être envoyé à l\'administrateur.';
+}
+
+        return redirect()->route('questionnaire.show', $questionnaire->id)
+        ->with('success', $message);
     }
 }

@@ -1,12 +1,12 @@
 @extends('emails.layout')
 
-@section('titre', 'Un nouveau dossier vous a été assigné')
+@section('titre', 'Un nouveau questionnaire a été soumis')
 
 @section('contenu')
 
-    <p>Bonjour {{ $analyste->first_name }},</p>
+    <p>Bonjour,</p>
 
-    <p>L'administrateur vient de vous assigner un dossier à analyser.</p>
+    <p>Un client vient de soumettre un questionnaire.</p>
 
     <ul>
         <li>Client : {{ $soumission->user->name }}</li>
@@ -16,11 +16,11 @@
     </ul>
 
     <p>
-        <a href="{{ route('analyst.dashboard') }}" style="color:#ffffff; background-color:#1d4ed8; padding:10px 18px; text-decoration:none;">
+        <a href="{{ route('admin.submission.index', $soumission->id) }}" style="color:#ffffff; background-color:#1d4ed8; padding:10px 18px; text-decoration:none;">
             Voir le dossier
         </a>
     </p>
 
-    <p>L'équipe PIQUÉOU Conseil Inc.</p>
+    <p>L'équipe Piqueou Conseil</p>
 
 @endsection

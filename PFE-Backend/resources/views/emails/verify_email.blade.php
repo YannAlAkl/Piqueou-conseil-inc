@@ -24,6 +24,6 @@
 
     <p>Si vous n'êtes pas à l'origine de cette demande, ignorez simplement ce message.</p>
 
-    <p>L'équipe Piqueou Conseil</p>
+    <p>L'équipe PIQUÉOU Conseil Inc.</p>
 
 @endsection

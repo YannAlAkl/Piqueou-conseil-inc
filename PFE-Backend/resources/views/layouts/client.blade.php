@@ -16,7 +16,7 @@
             <div class="client-nav-row">
 
                 <div class="flex items-center gap-8">
-                    <a href="{{ route('client.dashboard') }}" class="client-brand">Piqueou Conseil</a>
+                    <a href="{{ route('client.dashboard') }}" class="client-brand">PIQUÉOU Conseil Inc.</a>
 
                     <div class="client-nav-links">
                         <a href="{{ route('client.dashboard') }}"
@@ -98,5 +98,7 @@
             formulaireEnAttente.submit();
         }
     </script>
+    @vite(['resources/js/app.js'])
 </body>
 </html>
+

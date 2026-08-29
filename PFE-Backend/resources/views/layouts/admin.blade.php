@@ -17,7 +17,7 @@
             <div class="admin-nav-row">
 
                 <div class="flex items-center gap-8">
-                    <a href="{{ route('admin.dashboard') }}" class="admin-brand">Piqueou Admin</a>
+                    <a href="{{ route('admin.dashboard') }}" class="admin-brand">PIQUÉOU Admin</a>
 
                     <div class="admin-nav-links">
                         <a href="{{ route('admin.dashboard') }}"
@@ -136,5 +136,7 @@
         }
     </script>
 
+    @vite(['resources/js/app.js'])
 </body>
 </html>
+

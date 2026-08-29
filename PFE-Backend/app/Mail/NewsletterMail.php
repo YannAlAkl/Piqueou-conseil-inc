@@ -34,7 +34,7 @@ class NewsletterMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Newsletter Piqueou Consulting: ' . $this->newsletter->title,
+            subject: 'Newsletter PIQUÉOU Conseil Inc.: ' . $this->newsletter->title,
         );
     }
 

@@ -16,7 +16,7 @@
             <div class="analyst-nav-row">
 
                 <div class="flex items-center gap-8">
-                    <a href="{{ route('analyst.dashboard') }}" class="analyst-brand">Piqueou Conseil</a>
+                    <a href="{{ route('analyst.dashboard') }}" class="analyst-brand">PIQUÉOU Conseil Inc.</a>
 
                     <div class="analyst-nav-links">
                         <a href="{{ route('analyst.dashboard') }}"
@@ -65,5 +65,7 @@
         </div>
     </main>
 
+    @vite(['resources/js/app.js'])
 </body>
 </html>
+

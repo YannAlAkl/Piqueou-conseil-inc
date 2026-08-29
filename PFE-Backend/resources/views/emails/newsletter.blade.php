@@ -16,7 +16,7 @@
                     <tr>
                         <td style="background-color:#0d1117; padding:28px 32px 20px 32px; border-bottom:1px solid #21262d;">
                             <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:11px; letter-spacing:2px; color:#2dd4ff; text-transform:uppercase;">
-                                🔒 Piqueou Conseil &nbsp;·&nbsp; Sécurité &amp; Actualités
+                                🔒 PIQUÉOU Conseil Inc. &nbsp;·&nbsp; Sécurité &amp; Actualités
                             </p>
                             <h1 style="margin:10px 0 4px 0; font-family:Arial, Helvetica, sans-serif; font-size:30px; line-height:1.15; font-weight:bold; color:#2dd4ff;">
                                 {{ $newsletter->nomCategorie() }}
@@ -92,7 +92,7 @@
                     <tr>
                         <td style="padding:24px 32px 28px 32px;">
                             <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#e6edf3;">
-                                L'équipe <strong style="color:#2dd4ff;">Piqueou Conseil</strong>
+                                L'équipe <strong style="color:#2dd4ff;">PIQUÉOU Conseil Inc.</strong>
                             </p>
                         </td>
                     </tr>

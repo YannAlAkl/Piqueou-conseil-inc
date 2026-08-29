@@ -1,7 +1,7 @@
 @extends('layouts.client')
 
 @section('title', 'Espace client')
-@section('subtitle', 'Bienvenue sur votre portail Piqueou Conseil.')
+@section('subtitle', 'Bienvenue sur votre portail PIQUÉOU Conseil Inc.')
 
 @section('content')
 
