@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Analyst;
 
 use App\Http\Controllers\Controller;
+use App\Mail\QuestionnaireSubmittedMail;
+use App\Models\User;
 use App\Models\UserQuestionnaire;
 use App\Models\UserQuestionnaireAnswer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class QuestionnaireController extends Controller
 {
@@ -62,10 +65,23 @@ class QuestionnaireController extends Controller
      $soumission->status = 'completed';
      $soumission->save();
 
+$message = 'Recommandations enregistrées avec succès.';
+
+$admin = User::whereHas('roles', function ($q) {
+    return $q->where('name', 'admin');
+})->first();
+
+try {
+    Mail::to($soumission->user->email)->send(new QuestionnaireSubmittedMail($soumission));
+
+    if ($admin) {
+        Mail::to($admin->email)->send(new QuestionnaireSubmittedMail($soumission, true));
+    }
+} catch (\Exception $e) {
+    $message = 'Recommandations enregistrées avec succès, mais l\'email n\'a pas pu être envoyé.';
+}
     return redirect()
         ->route('analyst.questionnaire.index')
-        ->with('success', 'Recommandations enregistrées avec succès.');
+        ->with('success', $message);
     }
 }
-
-

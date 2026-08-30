@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\QuestionnaireSubmittedMail;
 use Illuminate\Support\Facades\Mail;
+
 class QuestionnaireController extends Controller
 {
     public function index()
@@ -134,7 +135,7 @@ try {
     $message = 'Votre questionnaire a bien été envoyé, mais l\'email n\'a pas pu être envoyé à l\'administrateur.';
 }
 
-        return redirect()->route('questionnaire.show', $questionnaire->id)
-        ->with('success', $message);
+       return redirect()->route('client.questionnaire.show', $questionnaire->id)
+    ->with('success', $message);
     }
 }

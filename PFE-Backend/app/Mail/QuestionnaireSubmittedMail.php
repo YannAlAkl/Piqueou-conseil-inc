@@ -15,10 +15,12 @@ class QuestionnaireSubmittedMail extends Mailable
     use Queueable, SerializesModels;
 
     public $soumission;
+    public $pourAdmin;
 
-    public function __construct(UserQuestionnaire $soumission)
+    public function __construct(UserQuestionnaire $soumission, bool $pourAdmin = false)
     {
         $this->soumission = $soumission;
+        $this->pourAdmin = $pourAdmin;
 
     }
 
