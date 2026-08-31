@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\adminController;
 use App\Http\Controllers\Admin\AnalaystController;
+use App\Http\Controllers\Admin\AdminAccountController;
 use App\Http\Controllers\Admin\clientController;
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\Admin\SubmissionController;
@@ -77,6 +78,30 @@ Route::middleware(['auth', 'role:admin'])
 
         Route::delete('/analysts/{id}', [AnalaystController::class, 'destroy'])
             ->name('analyst.destroy');
+
+        Route::get('/admins', [AdminAccountController::class, 'index'])
+            ->name('admin.index');
+
+        Route::get('/admins/create', [AdminAccountController::class, 'create'])
+            ->name('admin.create');
+
+        Route::post('/admins', [AdminAccountController::class, 'store'])
+            ->name('admin.store');
+
+        Route::get('/admins/{id}', [AdminAccountController::class, 'show'])
+            ->name('admin.show');
+
+        Route::get('/admins/{id}/edit', [AdminAccountController::class, 'edit'])
+            ->name('admin.edit');
+
+        Route::put('/admins/{id}', [AdminAccountController::class, 'update'])
+            ->name('admin.update');
+
+        Route::post('/admins/{id}/verify', [AdminAccountController::class, 'verify'])
+            ->name('admin.verify');
+
+        Route::delete('/admins/{id}', [AdminAccountController::class, 'destroy'])
+            ->name('admin.destroy');
 
 
         Route::get('/clients', [clientController::class, 'index'])
@@ -248,5 +273,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 require __DIR__ . '/auth.php';
+
+
 
 

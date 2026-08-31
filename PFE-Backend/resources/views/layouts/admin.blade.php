@@ -24,6 +24,10 @@
                            class="admin-nav-link {{ request()->routeIs('admin.dashboard') ? 'admin-nav-link-active' : '' }}">
                             Tableau de bord
                         </a>
+                        <a href="{{ route('admin.admin.index') }}"
+                           class="admin-nav-link {{ request()->routeIs('admin.admin.*') ? 'admin-nav-link-active' : '' }}">
+                            Administrateurs
+                        </a>
                         <a href="{{ route('admin.analyst.index') }}"
                            class="admin-nav-link {{ request()->routeIs('admin.analyst.*') ? 'admin-nav-link-active' : '' }}">
                             Analystes
@@ -139,4 +143,5 @@
     @vite(['resources/js/app.js'])
 </body>
 </html>
+
 
