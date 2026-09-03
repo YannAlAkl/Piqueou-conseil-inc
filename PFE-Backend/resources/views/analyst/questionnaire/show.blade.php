@@ -44,7 +44,7 @@
                 @endif
 
                 @if (($reponses[$question->id]->answer ?? '') !== '')
-                    <div class="analyst-answer contenue-html">{!! $reponses[$question->id]->answer!!}</div>
+                    <div class="analyst-answer contenu-html">{!! $reponses[$question->id]->answer!!}</div>
                 @else
                     <div class="analyst-answer-empty">Pas de réponse enregistrée</div>
                 @endif
@@ -52,7 +52,7 @@
                 @if (($reponses[$question->id]->client_comment ?? '') !== '')
                     <div class="analyst-comment">
                         <strong>Commentaire du client</strong>
-                        <div class="contenu-html">{!! $reponses[$question->id]->client_comment !!}</div>
+                        <p>{{ $reponses[$question->id]->client_comment }}</p>
                     </div>
                 @endif
 

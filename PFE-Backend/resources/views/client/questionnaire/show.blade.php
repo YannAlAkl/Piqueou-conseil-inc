@@ -54,8 +54,9 @@
                     @endforeach
 
                 @else
-                    <textarea name="answers[{{ $question->id }}]" rows="4" class="client-textarea" {{ $modifiable ? '' : 'disabled' }}>{{ $valeur }}</textarea>
-                @endif
+                    <textarea name="answers[{{ $question->id }}]" rows="4" class="client-textarea editeur" {{ $modifiable ? '' : 'disabled' }}>{{ $valeur }}
+                    </textarea>
+                 @endif
 
                 <label class="client-label">Commentaire (optionnel)</label>
                 <textarea name="comments[{{ $question->id }}]" rows="2" class="client-textarea" {{ $modifiable ? '' : 'disabled' }}>{{ $commentaire }}</textarea>
@@ -90,5 +91,6 @@
             <div class="contenu-html text-sm text-gray-700">{!! $soumission->conclusion !!}</div>
         </div>
     @endif
+    @include('partials.tinymce')
 
 @endsection

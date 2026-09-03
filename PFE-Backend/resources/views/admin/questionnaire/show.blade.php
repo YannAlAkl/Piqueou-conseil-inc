@@ -52,9 +52,9 @@
 
                 @if ($reponse && $reponse->client_comment)
                     <p class="admin-info-label">Commentaire du client</p>
-                    <div class="contenu-html admin-info-value" style="white-space: pre-line; margin-bottom:12px;">
-                        {!! $reponse->client_comment !!}
-                    </div>
+                    <p class=" admin-info-value" style="white-space: pre-line; margin-bottom:12px;">
+                        {{ $reponse->client_comment }}
+                    </p>
                 @endif
 
                 <div style="background:#f0fdf4; border-left:3px solid #22c55e; border-radius:8px; padding:12px 14px;">
