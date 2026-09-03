@@ -93,10 +93,14 @@
             formulaireEnAttente = null;
         }
 
-        function validerModal() {
-            document.getElementById('action-choisie').value = 'envoyer';
-            formulaireEnAttente.submit();
+       function validerModal() {
+        if (typeof tinymce !== 'undefined') {
+            tinymce.triggerSave();
         }
+
+    document.getElementById('action-choisie').value = 'envoyer';
+    formulaireEnAttente.submit();
+}
     </script>
     @vite(['resources/js/app.js'])
 </body>

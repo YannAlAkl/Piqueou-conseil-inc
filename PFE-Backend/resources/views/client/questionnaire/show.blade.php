@@ -63,7 +63,7 @@
                 @if ($reponse && $reponse->analyst_recommendation)
                     <div class="client-reco">
                         <strong>Recommandation de l'analyste</strong>
-                        <p>{{ $reponse->analyst_recommendation }}</p>
+                        <div class="contenu-html">{!! $reponse->analyst_recommendation !!}</div>
                     </div>
                 @endif
             </div>
@@ -87,7 +87,7 @@
     @if ($soumission->conclusion)
         <div class="client-card">
             <h2 class="client-card-title">Conclusion de l'analyste</h2>
-            <p class="text-sm text-gray-700">{{ $soumission->conclusion }}</p>
+            <div class="contenu-html text-sm text-gray-700">{!! $soumission->conclusion !!}</div>
         </div>
     @endif
 

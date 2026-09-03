@@ -32,6 +32,7 @@
         @forelse ($soumission->questionnaire->questions as $question)
 
             <div class="analyst-question">
+                <p class="analyst-question-text">
                     {{ $question->position }}. {{ $question->question }}
                     @if ($question->required)
                         <span class="analyst-required">*</span>
@@ -43,7 +44,7 @@
                 @endif
 
                 @if (($reponses[$question->id]->answer ?? '') !== '')
-                    <div class="analyst-answer">{{ $reponses[$question->id]->answer }}</div>
+                    <div class="analyst-answer contenue-html">{!! $reponses[$question->id]->answer!!}</div>
                 @else
                     <div class="analyst-answer-empty">Pas de réponse enregistrée</div>
                 @endif
@@ -51,13 +52,13 @@
                 @if (($reponses[$question->id]->client_comment ?? '') !== '')
                     <div class="analyst-comment">
                         <strong>Commentaire du client</strong>
-                        <p>{{ $reponses[$question->id]->client_comment }}</p>
+                        <div class="contenu-html">{!! $reponses[$question->id]->client_comment !!}</div>
                     </div>
                 @endif
 
                 <div>
                     <strong>Recommandation de l'analyste</strong>
-                    <textarea name="recommendation[{{ $question->id }}]" rows="6" class="analyst-textarea"
+                    <textarea name="recommendation[{{ $question->id }}]" rows="6" class="analyst-textarea editeur"
                               placeholder="Votre recommandation pour cette réponse...">{{ old('recommendation.' . $question->id, $reponses[$question->id]->analyst_recommendation ?? '') }}</textarea>
                 </div>
             </div>
@@ -73,7 +74,7 @@
 
             <label for="conclusion" class="analyst-label">Votre analyse générale</label>
 
-            <textarea name="conclusion" id="conclusion" rows="6" class="analyst-textarea"
+            <textarea name="conclusion" id="conclusion" rows="6" class="analyst-textarea editeur"
                       placeholder="Saisissez votre conclusion générale pour ce client...">{{ old('conclusion', $soumission->conclusion) }}</textarea>
 
             @error('conclusion')
@@ -86,5 +87,5 @@
         </div>
 
     </form>
-
+@include('partials.tinymce')
 @endsection

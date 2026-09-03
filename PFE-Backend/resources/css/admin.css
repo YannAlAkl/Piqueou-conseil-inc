@@ -6,6 +6,10 @@
 
 @layer components {
 
+    .contenu-html p { @apply mb-2; }
+    .contenu-html ul { @apply list-disc pl-5 mb-2; }
+    .contenu-html ol { @apply list-decimal pl-5 mb-2; }
+    .contenu-html a { @apply text-pq-teal underline; }
     /* ---------- Fond ---------- */
 
     body.admin-page {
