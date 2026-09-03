@@ -4,7 +4,7 @@
 @section('subtitle', 'Liste des comptes clients du portail.')
 
 @section('actions')
-    <a href="{{ route('admin.client.create') }}" class="admin-btn admin-btn-blue">+ Ajouter un client</a>
+    {{-- <a href="{{ route('admin.client.create') }}" class="admin-btn admin-btn-blue">+ Ajouter un client</a> --}}
 @endsection
 
 @section('content')

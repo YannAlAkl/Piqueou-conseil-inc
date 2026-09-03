@@ -38,7 +38,7 @@ class adminController extends Controller
      // Valide les infos personnelles soumises, en excluant l'utilisateur courant de la contrainte d'unicité sur l'email
     public function update(Request $request, $id)
     {
-
+        // Valide les informations soumises pour la mise à jour de l'utilisateur, en excluant l'utilisateur courant de la contrainte d'unicité sur l'email
         $validated = $request->validate([
             'first_name'   => 'required|string|max:255',
             'last_name'    => 'required|string|max:255',
@@ -47,7 +47,9 @@ class adminController extends Controller
             'company_name' => 'nullable|string|max:255',
         ]);
 
+        // Récupère l'utilisateur ciblé et met à jour ses informations avec les données validées
         $user = User::findOrFail($id);
+        // Met à jour les informations de l'utilisateur avec les données validées
         $user->update($validated);
 
         return back()->with('success', 'Utilisateur mis à jour.');
@@ -83,9 +85,10 @@ class adminController extends Controller
         $message = 'Le compte a été activé. Un email de vérification a été envoyé.';
 
         try {
+            // Envoie un email de vérification à l'utilisateur pour confirmer son adresse email
             $user->sendEmailVerificationNotification();
         } catch (\Exception $e) {
-            // L'activation décidée par l'admin reste effective même si l'email échoue
+            // Si l'envoi de l'email échoue, on informe l'admin mais le compte reste activé
             $message = 'Le compte a été activé mais l\'email de vérification n\'a pas pu être envoyé.';
         }
 
@@ -97,9 +100,9 @@ class adminController extends Controller
     {
         // recupere les questionnaire completed c'est a dire repondus par le client et analyse par l'analyste
         $questionnaires = UserQuestionnaire::with('user', 'questionnaire')
+        //filtre pour ne recuperer que les questionnaires completed ou under_review
             ->whereIn('status', ['under_review','completed'])
             ->get();
-
         return view('admin.questionnaire.index', compact('questionnaires'));
     }
 
@@ -109,15 +112,18 @@ class adminController extends Controller
    {
         // recupere le contenus des questionnaires completed c'est a dire repondus par le client et analyse par l'analyste
         $soumission = UserQuestionnaire::with('user', 'analyst', 'questionnaire.questions.type')
-        ->where('status', 'completed')
-        ->findOrFail($id);
+        ->where('status', 'completed')//filtre pour ne recuperer que les questionnaires completed
+        ->findOrFail($id);// recupere le questionnaire completed correspondant à l'id fourni
 
+
+        // recupere les reponses du questionnaire completed correspondant à l'id fourni
         $reponses = UserQuestionnaireAnswer::where('user_id', $soumission->user_id)
+        //filtre pour ne recuperer que les reponses du questionnaire completed correspondant à l'id fourni
             ->where('questionnaire_id', $soumission->questionnaire_id)
             ->get()
             ->keyBy('question_id');
 
-        return view('admin.questionnaire.show', compact('soumission', 'reponses'));
+            return view('admin.questionnaire.show', compact('soumission', 'reponses'));
     }
 
 }

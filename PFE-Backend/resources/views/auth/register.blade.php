@@ -87,12 +87,18 @@
                     @enderror
                 </div>
 
-                <!-- wants_newsletter (tinyint - default 0) -->
                 <div class="form-group full-width checkbox-group">
                     <input type="hidden" name="wants_newsletter" value="0">
                     <input type="checkbox" id="wants_newsletter" name="wants_newsletter" value="1">
-                    <label for="wants_newsletter">S'abonner à la newsletter</label>
+                    <label for="wants_newsletter">S'abonner à la newsletter
+                        <span class="consent-text">(L'abonnement à la newsletter est facultatif. En cochant cette
+                            case, vous consentez à recevoir nos communications par courriel)</span>
+                    </label>
                 </div>
+                <p class="consent-text full-width">
+                  L'abonnement à la newsletter est facultatif. En cochant cette case, vous consentez à recevoir
+                  nos communications par courriel
+                </p>
 
                 <!-- newsletter_category (NULL) -->
                 <div class="form-group full-width" id="newsletter_category_container" style="display: none;">

@@ -64,22 +64,24 @@ class QuestionnaireController extends Controller
     //une fois l'analyse enregiste le stautue doit passer vers completed
      $soumission->status = 'completed';
      $soumission->save();
-
-$message = 'Recommandations enregistrées avec succès.';
-
+// Envoi d'un email au client et à l'administrateur pour les informer de la soumission du questionnaire
+$message = 'Recommandations enregistrées avec succès. Un email a été envoyé au client et à l\'administrateur pour les informer de la soumission du questionnaire.';
+// Récupère le premier utilisateur ayant le rôle "admin" pour l'envoi de l'email
 $admin = User::whereHas('roles', function ($q) {
     return $q->where('name', 'admin');
 })->first();
-
+// Envoi des emails de notification au client et à l'administrateur
 try {
     Mail::to($soumission->user->email)->send(new QuestionnaireSubmittedMail($soumission));
-
+// Envoi d'un email à l'administrateur si un compte admin est trouvé
     if ($admin) {
         Mail::to($admin->email)->send(new QuestionnaireSubmittedMail($soumission, true));
     }
+    // Si l'envoi des emails réussit, on peut définir un message de succès
 } catch (\Exception $e) {
     $message = 'Recommandations enregistrées avec succès, mais l\'email n\'a pas pu être envoyé.';
 }
+// Redirection vers la liste des questionnaires de l'analyste avec un message de succès
     return redirect()
         ->route('analyst.questionnaire.index')
         ->with('success', $message);

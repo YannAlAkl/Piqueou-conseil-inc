@@ -15,7 +15,7 @@
         <p class="text-sm text-gray-600">
             {{ $soumission->user->email ?? '-' }}
             @if ($soumission->user && $soumission->user->company_name)
-                — {{ $soumission->user->company_name }}
+            — {{ $soumission->user->company_name }}
             @endif
         </p>
 
@@ -81,7 +81,7 @@
             @enderror
 
             <div class="analyst-form-actions">
-                <button type="submit" class="analyst-btn analyst-btn-blue">Enregistrer l'analyse</button>
+                <button type="submit" class="analyst-btn analyst-btn-blue">Envoyer l'analyse</button>
             </div>
         </div>
 

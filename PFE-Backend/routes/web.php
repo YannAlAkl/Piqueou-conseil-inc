@@ -70,7 +70,7 @@ Route::middleware(['auth', 'role:admin'])
         Route::get('/analysts/{id}/edit', [AnalaystController::class, 'edit'])
             ->name('analyst.edit');
 
-        Route::put('/analysts/{id}', [AnalaystController::class, 'uptade'])
+        Route::put('/analysts/{id}', [AnalaystController::class, 'update'])
             ->name('analyst.update');
 
         Route::post('/analysts/{id}/verify', [AnalaystController::class, 'verify'])
@@ -119,7 +119,7 @@ Route::middleware(['auth', 'role:admin'])
         Route::get('/clients/{id}/edit', [clientController::class, 'edit'])
             ->name('client.edit');
 
-        Route::put('/clients/{id}', [clientController::class, 'uptade'])
+        Route::put('/clients/{id}', [clientController::class, 'update'])
             ->name('client.update');
 
         Route::post('/clients/{id}/activate', [clientController::class, 'activate'])

@@ -179,6 +179,9 @@ class PHP_Email_Form {
         $mail->Password = $this->smtp['password'];
         $mail->Port = $this->smtp['port'];
         $mail->SMTPSecure = $this->smtp['encryption'];
+        if($this->smtp['encryption'] == '') {
+            $mail->SMTPAutoTLS = false;
+            }
       }
 
       // Headers

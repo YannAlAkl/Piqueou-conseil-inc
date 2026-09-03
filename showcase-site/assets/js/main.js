@@ -18,6 +18,15 @@
   /**
    * Mobile nav toggle
    */
+  
+  
+  function onDomReady(fn) {
+  if (document.readyState !== 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
@@ -58,7 +67,7 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
+    onDomReady(() => {
       preloader.remove();
     });
   }
@@ -92,15 +101,21 @@
       duration: 600,
       easing: 'ease-in-out',
       once: true,
-      mirror: false
+      mirror: false,
+      disable: true
     });
   }
-  window.addEventListener('load', aosInit);
+  onDomReady(aosInit);
 
   /**
    * Initiate Pure Counter
    */
   new PureCounter();
+  onDomReady(() => {
+    document.querySelectorAll('.purecounter').forEach(el =>{
+      el.textContent = el.getAttribute('data-purecounter-end');
+    });
+    });
 
   /**
    * Frequently Asked Questions Toggle

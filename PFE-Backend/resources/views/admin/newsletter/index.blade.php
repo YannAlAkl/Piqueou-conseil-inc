@@ -11,7 +11,7 @@
         </form>
 
         <form method="POST" action="{{ route('admin.newsletter.send') }}" class="inline-flex items-center m-0"
-            onsubmit="return ouvrirModal(this, 'Envoyer les newsletters', 'Chaque client abonné va recevoir la newsletter publiée de sa catégorie.', 'Envoyer', 'admin-btn-green')">
+            onsubmit="return ouvrirModal(this, 'Envoyer les newsletters', 'Chaque client abonné va recevoir la newsletter publiée de sa catégorie par      email.', 'Envoyer', 'admin-btn-green')">
             @csrf
             <button type="submit" class="admin-btn admin-btn-green">Envoyer les newsletters</button>
         </form>

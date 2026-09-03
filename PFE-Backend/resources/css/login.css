@@ -92,6 +92,9 @@
     .checkbox-group input {
         accent-color: #22c55e;
     }
+    .consent-text {
+    @apply text-[0.78rem] font-normal text-gray-500;
+}
 
     /* ---------- Actions ---------- */
 

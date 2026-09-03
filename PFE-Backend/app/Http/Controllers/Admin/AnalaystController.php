@@ -29,6 +29,7 @@ class AnalaystController extends Controller
         return view('admin.analyst.create');
     }
 
+    // recupere par groupe de 10  des compte avec le role analyst
     public function store(Request $request)
     {
         // Valide les informations du nouvel analyste
