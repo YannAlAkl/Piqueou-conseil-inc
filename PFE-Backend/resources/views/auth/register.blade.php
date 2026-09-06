@@ -95,11 +95,6 @@
                             case, vous consentez à recevoir nos communications par courriel)</span>
                     </label>
                 </div>
-                <p class="consent-text full-width">
-                  L'abonnement à la newsletter est facultatif. En cochant cette case, vous consentez à recevoir
-                  nos communications par courriel
-                </p>
-
                 <!-- newsletter_category (NULL) -->
                 <div class="form-group full-width" id="newsletter_category_container" style="display: none;">
                     <label for="newsletter_category">Catégorie de newsletter</label>

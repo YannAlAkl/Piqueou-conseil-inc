@@ -89,7 +89,7 @@ class AnalaystController extends Controller
         return view('admin.analyst.edit', compact('analyst'));
     }
 
-    public function uptade(Request $request, $id)
+    public function update(Request $request, $id)
     {
         // Valide les infos modifiées, en excluant l'analyste courant de la contrainte d'unicité sur l'email
         $validated = $request->validate([

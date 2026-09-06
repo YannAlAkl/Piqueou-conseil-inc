@@ -84,6 +84,13 @@
             <div class="analyst-form-actions">
                 <button type="submit" class="analyst-btn analyst-btn-blue">Envoyer l'analyse</button>
             </div>
+
+              <div class="analyst-form-actions">
+                <button type="submit"
+                formaction="{{ route('analyst.questionnaire.saveProgress', $soumission->id) }}" class="analyst-btn analyst-btn-blue">
+                    Enregister
+                </button>
+            </div>
         </div>
 
     </form>

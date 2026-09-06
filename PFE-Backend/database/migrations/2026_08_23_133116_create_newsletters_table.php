@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->longText('content');
             $table->string('image')->nullable();
             $table->longText('source_url');
-            $table->enum('status', ['draft', 'published'])->default('draft');
+            $table->enum('status', ['draft', 'ed'])->default('draft');
             $table->timestamp('sent_at')->nullable();
             $table->timestamps();
         });

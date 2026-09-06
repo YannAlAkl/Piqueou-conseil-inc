@@ -55,7 +55,7 @@
 
                 @else
                     <textarea name="answers[{{ $question->id }}]" rows="4" class="client-textarea editeur" {{ $modifiable ? '' : 'disabled' }}>{{ $valeur }}
-                    </textarea>
+                </textarea>
                  @endif
 
                 <label class="client-label">Commentaire (optionnel)</label>

@@ -202,6 +202,13 @@ Route::middleware(['auth', 'role:analyst'])
             [AnalystQuestionnaireController::class, 'store']
         )->name('questionnaire.store');
 
+
+        Route::post(
+            '/questionnaires-save-progress/{id}',
+            [AnalystQuestionnaireController::class, 'saveProgress']
+        )->name('questionnaire.saveProgress');
+
+
     });
 /*
 |--------------------------------------------------------------------------

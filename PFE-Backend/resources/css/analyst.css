@@ -260,6 +260,114 @@
         background: rgba(220, 38, 38, 0.1);
         border: 1px solid rgba(220, 38, 38, 0.3);
     }
+
+    /* ---------- Tableau de bord ---------- */
+
+    .analyst-kpi-grid {
+        @apply mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4;
+    }
+
+    .analyst-kpi {
+        @apply rounded-[14px] border border-pq-border bg-white p-5 shadow-pq-stat transition duration-300;
+    }
+
+    .analyst-kpi:hover {
+        @apply -translate-y-0.5 shadow-pq-stat-hover;
+    }
+
+    .analyst-kpi-teal {
+        @apply border-l-4 border-l-pq-teal;
+    }
+
+    .analyst-kpi-green {
+        @apply border-l-4 border-l-pq-green;
+    }
+
+    .analyst-kpi-amber {
+        @apply border-l-4 border-l-amber-500;
+    }
+
+    .analyst-kpi-slate {
+        @apply border-l-4 border-l-slate-400;
+    }
+
+    .analyst-kpi-label {
+        @apply text-[0.74rem] font-semibold uppercase tracking-wide text-slate-500;
+    }
+
+    .analyst-kpi-value {
+        @apply mt-2 font-heading text-[2.1rem] font-bold leading-none text-pq-heading;
+    }
+
+    .analyst-kpi-unit {
+        @apply ml-1 text-[1rem] font-semibold text-slate-400;
+    }
+
+    .analyst-kpi-note {
+        @apply mt-2 text-[0.78rem] text-slate-500;
+    }
+
+    .analyst-split {
+        @apply mt-5 flex h-4 w-full gap-0.5 overflow-hidden rounded-full bg-slate-200;
+    }
+
+    .analyst-split-teal {
+        @apply h-full bg-pq-teal;
+    }
+
+    .analyst-split-amber {
+        @apply h-full bg-amber-500;
+    }
+
+    .analyst-legend {
+        @apply mt-4 flex flex-wrap gap-6;
+    }
+
+    .analyst-legend-item {
+        @apply flex items-center gap-2 text-[0.84rem] text-pq-text;
+    }
+
+    .analyst-legend-dot {
+        @apply h-3 w-3 shrink-0 rounded-full;
+    }
+
+    .analyst-chart {
+        @apply mt-6 flex h-[180px] items-end justify-between gap-3;
+    }
+
+    .analyst-chart-col {
+        @apply flex h-full flex-1 flex-col items-center justify-end gap-2;
+    }
+
+    .analyst-bar {
+        @apply w-full max-w-[64px] rounded-t-[4px] bg-pq-teal;
+        min-height: 3px;
+    }
+
+    .analyst-bar-value {
+        @apply text-[0.78rem] font-semibold text-pq-heading;
+    }
+
+    .analyst-bar-label {
+        @apply text-[0.72rem] uppercase tracking-wide text-slate-500;
+    }
+
+    .analyst-row {
+        @apply flex flex-wrap items-center justify-between gap-4 border-b border-pq-border py-4;
+    }
+
+    .analyst-row:last-child {
+        @apply border-b-0 pb-0;
+    }
+
+    .analyst-row-name {
+        @apply font-semibold text-pq-heading;
+    }
+
+    .analyst-row-meta {
+        @apply mt-1 text-[0.78rem] text-slate-500;
+    }
+
 }
 
 @media (max-width: 768px) {

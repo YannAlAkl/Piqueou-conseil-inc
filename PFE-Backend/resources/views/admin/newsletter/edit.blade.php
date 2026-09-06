@@ -23,7 +23,8 @@
                     <select name="category" id="category" class="admin-select">
                         <option value="cmmc" {{ $newsletter->category === 'cmmc' ? 'selected' : '' }}>CMMC</option>
                         <option value="loi25" {{ $newsletter->category === 'loi25' ? 'selected' : '' }}>Loi 25</option>
-                        <option value="iso27001" {{ $newsletter->category === 'iso27001' ? 'selected' : '' }}>ISO 27001</option>
+                        <option value="iso27001" {{ $newsletter->category === 'iso27001' ? 'selected' : '' }}>ISO 27001
+                        </option>
                     </select>
                 </div>
             </div>
@@ -38,9 +39,9 @@
                 <label for="image" class="admin-label">Image (optionnelle)</label>
                 <input type="file" name="image" id="image" class="admin-input" accept="image/*">
 
-                @if ($newsletter->image)
-                    <img src="{{ asset('storage/' . $newsletter->image) }}" alt=""
-                        style="max-width:260px; margin-top:10px;">
+                @if ($newsletter->image && file_exists(storage_path('app/public/' . $newsletter->image)))
+                    <img src="data:image/png;base64,{{ base64_encode(file_get_contents(storage_path('app/public/' . $newsletter->image))) }}"
+                        alt="" style="max-width:260px; margin-top:10px;">
                 @endif
             </div>
 

@@ -20,36 +20,56 @@
                     <a href="{{ route('admin.dashboard') }}" class="admin-brand">PIQUÉOU Admin</a>
 
                     <div class="admin-nav-links">
+
                         <a href="{{ route('admin.dashboard') }}"
                            class="admin-nav-link {{ request()->routeIs('admin.dashboard') ? 'admin-nav-link-active' : '' }}">
                             Tableau de bord
                         </a>
-                        <a href="{{ route('admin.admin.index') }}"
-                           class="admin-nav-link {{ request()->routeIs('admin.admin.*') ? 'admin-nav-link-active' : '' }}">
-                            Administrateurs
-                        </a>
-                        <a href="{{ route('admin.analyst.index') }}"
-                           class="admin-nav-link {{ request()->routeIs('admin.analyst.*') ? 'admin-nav-link-active' : '' }}">
-                            Analystes
-                        </a>
-                        <a href="{{ route('admin.client.index') }}"
-                           class="admin-nav-link {{ request()->routeIs('admin.client.*') ? 'admin-nav-link-active' : '' }}">
-                            Clients
-                        </a>
-                        <a href="{{ route('admin.submission.index') }}"
-                           class="admin-nav-link {{ request()->routeIs('admin.submission.*') ? 'admin-nav-link-active' : '' }}">
-                            Questionnaires envoyés
-                        </a>
-                        <a href="{{ route('admin.questionnaire.index') }}"
-                           class="admin-nav-link {{ request()->routeIs('admin.questionnaire.*') ? 'admin-nav-link-active' : '' }}">
-                            Questionnaires analysés
-                        </a>
+
+                        <div class="admin-dropdown">
+                            <span class="admin-nav-link {{ request()->routeIs('admin.admin.*') || request()->routeIs('admin.analyst.*') || request()->routeIs('admin.client.*') ? 'admin-nav-link-active' : '' }}">
+                                Utilisateurs &#9662;
+                            </span>
+
+                            <div class="admin-dropdown-menu">
+                                <a href="{{ route('admin.admin.index') }}"
+                                   class="admin-dropdown-item {{ request()->routeIs('admin.admin.*') ? 'admin-dropdown-item-active' : '' }}">
+                                    Administrateurs
+                                </a>
+                                <a href="{{ route('admin.analyst.index') }}"
+                                   class="admin-dropdown-item {{ request()->routeIs('admin.analyst.*') ? 'admin-dropdown-item-active' : '' }}">
+                                    Analystes
+                                </a>
+                                <a href="{{ route('admin.client.index') }}"
+                                   class="admin-dropdown-item {{ request()->routeIs('admin.client.*') ? 'admin-dropdown-item-active' : '' }}">
+                                    Clients
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="admin-dropdown">
+                            <span class="admin-nav-link {{ request()->routeIs('admin.submission.*') || request()->routeIs('admin.questionnaire.*') ? 'admin-nav-link-active' : '' }}">
+                                Questionnaires &#9662;
+                            </span>
+
+                            <div class="admin-dropdown-menu">
+                                <a href="{{ route('admin.submission.index') }}"
+                                   class="admin-dropdown-item {{ request()->routeIs('admin.submission.*') ? 'admin-dropdown-item-active' : '' }}">
+                                    Questionnaires envoyés
+                                </a>
+                                <a href="{{ route('admin.questionnaire.index') }}"
+                                   class="admin-dropdown-item {{ request()->routeIs('admin.questionnaire.*') ? 'admin-dropdown-item-active' : '' }}">
+                                    Questionnaires analysés
+                                </a>
+                            </div>
+                        </div>
+
                         <a href="{{ route('admin.newsletter.index') }}"
                            class="admin-nav-link {{ request()->routeIs('admin.newsletter.*') ? 'admin-nav-link-active' : '' }}">
                             Newsletters
                         </a>
+
                     </div>
-                </div>
 
                 <div class="admin-user">
                     <span>{{ Auth::user()->name }}</span>

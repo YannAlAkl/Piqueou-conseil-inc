@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connexion - PIQUÉOU Conseil Inc.</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}"
 </head>
 <body>
     <div class="login-box">
+        <img src="{{ asset('images/logo.png')  }}" alt="piqueou conseil inc" >
         <h1>Connexion</h1>
 
 @auth
@@ -48,13 +50,11 @@
                     </div>
                 </div>
 
-                <!-- Se souvenir de moi -->
-                {{-- <div class="remember-me">
-                    <label>
-                        <input type="checkbox" name="remember">
-                        Se souvenir de moi
-                    </label>
-                </div> --}}
+                 <!-- Se souvenir de moi -->
+               <div class="form-actions">
+                    <a href="http://localhost:8080/">Retour à l'accueil</a>
+
+                </div>
 
                 <div class="form-actions">
                     <a href="{{ route('password.request') }}">Mot de passe oublié ?</a>

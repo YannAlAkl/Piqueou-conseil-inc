@@ -28,7 +28,7 @@ class adminController extends Controller
 
     public function edit($id)
     {
-        // Récupère l'utilisateur ciblé pour préremplir le formulaire de modification des infos personnelles (nom,email, téléphone, entreprise)
+     // Récupère l'utilisateur ciblé pour préremplir le formulaire de modification des infos personnelles (nom,email, téléphone, entreprise)
      $user = User::findOrFail($id);
 
     return view('admin.user.edit', compact('user'));

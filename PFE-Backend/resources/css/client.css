@@ -255,6 +255,114 @@
     .client-modal-actions {
         @apply mt-7 flex justify-center gap-3;
     }
+
+    /* ---------- Tableau de bord ---------- */
+
+    .client-kpi-grid {
+        @apply mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4;
+    }
+
+    .client-kpi {
+        @apply rounded-[14px] border border-pq-border bg-white p-5 shadow-pq-stat transition duration-300;
+    }
+
+    .client-kpi:hover {
+        @apply -translate-y-0.5 shadow-pq-stat-hover;
+    }
+
+    .client-kpi-teal {
+        @apply border-l-4 border-l-pq-teal;
+    }
+
+    .client-kpi-green {
+        @apply border-l-4 border-l-pq-green;
+    }
+
+    .client-kpi-amber {
+        @apply border-l-4 border-l-amber-500;
+    }
+
+    .client-kpi-slate {
+        @apply border-l-4 border-l-slate-400;
+    }
+
+    .client-kpi-label {
+        @apply text-[0.74rem] font-semibold uppercase tracking-wide text-slate-500;
+    }
+
+    .client-kpi-value {
+        @apply mt-2 font-heading text-[2.1rem] font-bold leading-none text-pq-heading;
+    }
+
+    .client-kpi-unit {
+        @apply ml-1 text-[1rem] font-semibold text-slate-400;
+    }
+
+    .client-kpi-note {
+        @apply mt-2 text-[0.78rem] text-slate-500;
+    }
+
+    .client-ring-card {
+        @apply mb-6 flex flex-col items-center gap-6 rounded-[14px] border border-pq-border bg-white p-7 shadow-pq-card sm:flex-row sm:gap-9;
+    }
+
+    .client-ring {
+        @apply relative h-[150px] w-[150px] shrink-0 rounded-full;
+    }
+
+    .client-ring-hole {
+        @apply absolute inset-[18px] flex flex-col items-center justify-center rounded-full bg-white;
+    }
+
+    .client-ring-value {
+        @apply font-heading text-[1.9rem] font-bold leading-none text-pq-heading;
+    }
+
+    .client-ring-legend {
+        @apply mt-1 text-[0.68rem] uppercase tracking-wide text-slate-500;
+    }
+
+    .client-steps {
+        @apply mt-5 flex flex-wrap gap-2;
+    }
+
+    .client-step {
+        @apply flex-1 rounded-[10px] border border-pq-border bg-pq-bg px-3 py-2.5 text-center text-[0.76rem] font-medium text-slate-500;
+        min-width: 108px;
+    }
+
+    .client-step-done {
+        @apply border-pq-teal bg-white font-semibold text-pq-teal;
+    }
+
+    .client-step-current {
+        @apply border-pq-teal bg-pq-teal font-semibold text-white;
+    }
+
+    .client-progress {
+        @apply h-2.5 w-full overflow-hidden rounded-full bg-slate-200;
+    }
+
+    .client-progress-fill {
+        @apply h-full rounded-full bg-pq-teal;
+    }
+
+    .client-row {
+        @apply flex flex-wrap items-center justify-between gap-4 border-b border-pq-border py-4;
+    }
+
+    .client-row:last-child {
+        @apply border-b-0 pb-0;
+    }
+
+    .client-row-name {
+        @apply font-semibold text-pq-heading;
+    }
+
+    .client-row-meta {
+        @apply mt-1 text-[0.78rem] text-slate-500;
+    }
+
 }
 
 @media (max-width: 768px) {
