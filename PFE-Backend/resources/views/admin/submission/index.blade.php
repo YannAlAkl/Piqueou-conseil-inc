@@ -5,6 +5,20 @@
 
 @section('content')
 
+    <div class="admin-legend">
+        <span class="admin-legend-item">
+            <span class="pastille-jaune"></span>
+            À assigner
+        </span>
+        <span class="admin-legend-item">
+            <span class="pastille-bleue"></span>
+            En analyse
+        </span>
+        <span class="admin-legend-item">
+            <span class="pastille-verte"></span>
+            Terminé
+        </span>
+    </div>
     <div class="admin-table-box">
         <table class="admin-table">
             <thead>
@@ -27,11 +41,13 @@
                         <td>{{ $soumission->submitted_at ? $soumission->submitted_at->format('d/m/Y H:i') : '-' }}</td>
                         <td>
                             @if ($soumission->status === 'submitted')
-                                <span class="admin-badge admin-badge-yellow">À assigner</span>
+                                <span class="admin-legend-item" title="À assigner"><span
+                                        class="pastille-jaune"></span></span>
                             @elseif ($soumission->status === 'under_review')
-                                <span class="admin-badge admin-badge-green">En analyse</span>
+                                <span class="admin-legend-item" title="En analyse"><span
+                                        class="pastille-bleue"></span></span>
                             @else
-                                <span class="admin-badge admin-badge-green">Terminé</span>
+                                <span class="admin-legend-item" title="Terminé"><span class="pastille-verte"></span></span>
                             @endif
                         </td>
                         <td>{{ $soumission->analyst ? $soumission->analyst->name : '-' }}</td>

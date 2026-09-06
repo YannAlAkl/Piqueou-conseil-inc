@@ -6,7 +6,7 @@ Trois espaces : **client** (répond au questionnaire), **analyste** (rédige les
  
 ## Prérequis
  
-- PHP 8.4 ou plus
+- PHP 8.4 ou plus   
 - Composer
  
 ## Installation

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profil</title>
     <link rel="stylesheet" href="{{ asset('css/client.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    
 </head>
 <body>
     <div class="py-12">

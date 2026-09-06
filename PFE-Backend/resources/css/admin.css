@@ -343,23 +343,28 @@
 
     /* ---------- Pastilles de statut ---------- */
 
-    .pastille-verte,
-    .pastille-jaune,
-    .pastille-rouge {
-        @apply inline-block h-[0.6rem] w-[0.6rem] shrink-0 rounded-full align-middle;
-    }
+   .pastille-verte,
+.pastille-jaune,
+.pastille-rouge,
+.pastille-bleue {
+    @apply inline-block h-[0.6rem] w-[0.6rem] shrink-0 rounded-full align-middle;
+}
 
-    .pastille-verte {
-        @apply bg-pq-green shadow-pq-dot-green;
-    }
+.pastille-verte {
+    @apply bg-pq-green shadow-pq-dot-green;
+}
 
-    .pastille-jaune {
-        @apply bg-yellow-500 shadow-pq-dot-yellow;
-    }
+.pastille-jaune {
+    @apply bg-yellow-500 shadow-pq-dot-yellow;
+}
 
-    .pastille-rouge {
-        @apply bg-red-600 shadow-pq-dot-red;
-    }
+.pastille-rouge {
+    @apply bg-red-600 shadow-pq-dot-red;
+}
+
+.pastille-bleue {
+    @apply bg-pq-teal shadow-pq-dot-blue;
+}
 
     /* ---------- Fiches de details ---------- */
 

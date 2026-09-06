@@ -1,7 +1,5 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Question;
 use App\Models\Questionnaire;
 use App\Models\QuestionType;
@@ -31,9 +29,6 @@ class QuestionnaireSeeder extends Seeder
                 'position' => 1,
                 'required' => false,
             ],
-
-
-
             [
                 'question' => 'Pouvez-vous nous parler de votre infrastructure technologique et de la manière dont elle soutient vos activités ?',
                 'type' => 'text',
@@ -76,8 +71,6 @@ class QuestionnaireSeeder extends Seeder
                 'position' => 6,
                 'required' => true,
             ],
-
-
             [
                 'question' => 'Avez-vous sensibilisé les membres de votre organisation aux nouvelles obligations en matière de protection des renseignements personnels ?',
                 'type' => 'unique_choice',

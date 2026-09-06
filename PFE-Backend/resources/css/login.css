@@ -17,10 +17,26 @@
     .login-box,
     .form-container {
         @apply w-full max-w-[420px] rounded-2xl border-t-4 border-pq-green bg-white px-10 py-9 shadow-pq-login;
+
     }
 
     .form-container {
         @apply max-w-[620px];
+    }
+
+    .login-box {
+        padding-top: 1.5rem;
+        /* remonte le logo et le titre dans la carte */
+    }
+
+        .login-box img,
+        .form-container img {
+        @apply mx-auto mb-3 block h-14 w-auto;
+    }
+
+
+    .login-box img {
+        @apply mx-auto mb-3 block h-14 w-auto;
     }
 
     .login-box h1,
@@ -81,6 +97,10 @@
         background: rgba(34, 197, 94, 0.12);
     }
 
+    .status-message:empty {
+        display: none;
+    }
+
     /* ---------- Options ---------- */
 
     .remember-me,
@@ -92,9 +112,10 @@
     .checkbox-group input {
         accent-color: #22c55e;
     }
+
     .consent-text {
-    @apply text-[0.78rem] font-normal text-gray-500;
-}
+        @apply text-[0.78rem] font-normal text-gray-500;
+    }
 
     /* ---------- Actions ---------- */
 
@@ -132,5 +153,17 @@
 }
 
 @media (max-width: 560px) {
-    .login-box, .form-container { padding-left: 24px; padding-right: 24px; padding-top: 28px; padding-bottom: 28px; }
+
+    .login-box,
+    .form-container {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+}
+
+.login-box {
+    padding-top: -2.45rem;
+    /* réduit l'espace au-dessus du titre pour le remonter */
 }

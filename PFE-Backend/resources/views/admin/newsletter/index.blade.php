@@ -50,9 +50,10 @@
                         <td>{{ $newsletter->nomCategorie() }}</td>
                         <td>
                             @if ($newsletter->status === 'published')
-                                <span class="admin-badge admin-badge-green">Publiée</span>
+                                <span class="admin-legend-item" title="Publiée"><span class="pastille-verte"></span></span>
                             @else
-                                <span class="admin-badge admin-badge-yellow">Brouillon</span>
+                                <span class="admin-legend-item" title="Brouillon"><span
+                                        class="pastille-jaune"></span></span>
                             @endif
                         </td>
                         <td>{{ $newsletter->sent_at ? $newsletter->sent_at->format('d/m/Y H:i') : '-' }}</td>

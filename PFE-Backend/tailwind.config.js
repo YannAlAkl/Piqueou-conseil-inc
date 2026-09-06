@@ -17,7 +17,7 @@ export default {
         'client-btn-blue', 'client-btn-gray',
         'analyst-badge-green', 'analyst-badge-yellow', 'analyst-badge-blue', 'analyst-badge-gray',
         'analyst-btn-blue', 'analyst-btn-gray',
-        'pastille-verte', 'pastille-jaune', 'pastille-rouge',
+        'pastille-verte', 'pastille-jaune', 'pastille-rouge', 'pastille-bleue',
     ],
 
     theme: {

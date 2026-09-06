@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inscription - PIQUÉOU Conseil Inc.</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 </head>
 
 <body>
     <div class="form-container">
+        <img src="{{ asset('images/logo.png')  }}" alt="piqueou conseil inc">
         <div class="form-header">
             <h2>Créer un compte </h2>
         </div>
@@ -111,6 +113,9 @@
                 <!-- Bouton de soumission -->
                 <div class="form-group full-width">
                     <button type="submit" class="submit-btn">S'inscrire</button>
+                </div>
+                <div class="form-actions">
+                    <a href="http://localhost:8080/">Retour à l'accueil</a>
                 </div>
             </div>
         </form>

@@ -8,6 +8,7 @@
     <title>@yield('title', 'Espace analyste') - {{ config('app.name') }}</title>
 
     <link rel="stylesheet" href="{{ asset('css/analyst.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 </head>
 <body class="analyst-page">
 

@@ -1,10 +1,19 @@
 @extends('layouts.admin')
 
 @section('title', 'Questionnaires en analyse ou terminés')
-@section('subtitle', "Consultez les recommandations et conclusions des analystes.")
+@section('subtitle', 'Consultez les recommandations et conclusions des analystes.')
 
 @section('content')
-
+    <div class="admin-legend">
+        <span class="admin-legend-item">
+            <span class="pastille-bleue"></span>
+            En analyse
+        </span>
+        <span class="admin-legend-item">
+            <span class="pastille-verte"></span>
+            Terminé
+        </span>
+    </div>
     <div class="admin-table-box">
         <table class="admin-table">
             <thead>
@@ -24,14 +33,15 @@
                         <td>{{ $questionnaire->questionnaire->title }}</td>
                         <td>
                             @if ($questionnaire->status === 'under_review')
-                                <span class="admin-badge admin-badge-green">En analyse</span>
+                                <span class="admin-legend-item" title="En analyse"><span class="pastille-bleue"></span></span>
                             @else
-                                <span class="admin-badge admin-badge-green">Terminé</span>
+                                <span class="admin-legend-item" title="Terminé"><span class="pastille-verte"></span></span>
                             @endif
                         </td>
                         <td>
                             @if ($questionnaire->status === 'completed')
-                                <a href="{{ route('admin.questionnaire.show', $questionnaire->id) }}" class="admin-btn admin-btn-blue">
+                                <a href="{{ route('admin.questionnaire.show', $questionnaire->id) }}"
+                                    class="admin-btn admin-btn-blue">
                                     Voir les recommandations
                                 </a>
                             @else
@@ -41,7 +51,8 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5" class="admin-table-empty">Aucun questionnaire en analyse ou terminé pour le moment.</td>
+                        <td colspan="5" class="admin-table-empty">Aucun questionnaire en analyse ou terminé pour le
+                            moment.</td>
                     </tr>
                 @endforelse
             </tbody>
