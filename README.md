@@ -32,38 +32,6 @@ Aucune base de données à créer : le projet utilise SQLite.
 | Courriel | Mot de passe |
 |---|---|
 | admin@test.com | password123 |
- 
-C'est le seul compte créé à l'installation. Les questionnaires, eux, sont déjà en place.
- 
-## Premier parcours (10 minutes)
- 
-**1. Créer un analyste**
-Connectez-vous en administrateur, puis *Utilisateurs → Analystes → Nouvel analyste*.
-Son mot de passe est généré automatiquement et envoyé par courriel — voir la section « Courriels » ci-dessous pour le récupérer.
- 
-**2. Créer un client**
-*Utilisateurs → Clients → Nouveau client*, en choisissant le statut **Actif**.
-Un courriel de vérification est envoyé : récupérez le lien dans le journal et ouvrez-le pour activer l'accès.
- 
-**3. Remplir un questionnaire**
-Connectez-vous avec le compte client, ouvrez un questionnaire, répondez et cliquez sur **Envoyer**.
- 
-**4. Assigner puis analyser**
-En administrateur, *Questionnaires → Questionnaires envoyés* : ouvrez le dossier et assignez-le à l'analyste.
-Connectez-vous ensuite en analyste, rédigez les recommandations et la conclusion, puis **Envoyer l'analyse**.
- 
-Le client voit alors les recommandations sous chacune de ses réponses.
- 
-## Courriels
- 
-Les courriels ne sont pas réellement expédiés. Ils sont écrits dans :
- 
-```
-PFE-Backend/storage/logs/laravel.log
-```
- 
-C'est là que se trouvent le **mot de passe généré de l'analyste** et le **lien de vérification du client**. Ouvrez le fichier et allez à la fin.
- 
 ## Site vitrine
  
 ```bash

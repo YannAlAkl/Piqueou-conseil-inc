@@ -32,7 +32,7 @@
     </div>
 
     <div class="admin-table-box">
-        <table class="admin-table">
+        <table class="admin-table admin-newsletter-table">
             <thead>
                 <tr>
                     <th>Titre</th>
@@ -46,31 +46,31 @@
             <tbody>
                 @forelse ($newsletters as $newsletter)
                     <tr>
-                        <td><span class="admin-cell-wrap">{{ $newsletter->title }}</span></td>
+                        <td>
+                            <span class="admin-newsletter-title" title="{{ $newsletter->title }}">{{ $newsletter->title }}</span>
+                        </td>
                         <td>{{ $newsletter->nomCategorie() }}</td>
                         <td>
                             @if ($newsletter->status === 'published')
-                                <span class="admin-badge admin-badge-green">Publiée</span>
+                                <span class="admin-newsletter-status" title="Publiée"><span class="pastille-verte"></span></span>
                             @else
-                                <span class="admin-badge admin-badge-yellow">Brouillon</span>
+                                <span class="admin-newsletter-status" title="Brouillon"><span class="pastille-jaune"></span></span>
                             @endif
                         </td>
                         <td>{{ $newsletter->sent_at ? $newsletter->sent_at->format('d/m/Y H:i') : '-' }}</td>
                         <td>
-                            <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-2">
 
-                                <a href="{{ route('admin.newsletter.edit', $newsletter->id) }}"
-                                    class="admin-action admin-action-yellow" title="Modifier">
+                                <a href="{{ route('admin.newsletter.edit', $newsletter->id) }}" class="admin-action admin-action-yellow" title="Modifier">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
 
                                 <form method="POST" action="{{ route('admin.newsletter.destroy', $newsletter->id) }}"
-                                    class="admin-inline-form"
-                                    onsubmit="return ouvrirModal(this, 'Supprimer cette newsletter', 'Cette action est définitive.', 'Supprimer', 'admin-btn-red')">
+                                      class="admin-inline-form"
+                                      onsubmit="return ouvrirModal(this, 'Supprimer cette newsletter', 'Cette action est définitive.', 'Supprimer', 'admin-btn-red')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="admin-action admin-action-red admin-action-reset"
-                                        title="Supprimer">
+                                    <button type="submit" class="admin-action admin-action-red admin-action-reset" title="Supprimer">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </form>
@@ -106,3 +106,4 @@
     @endif
 
 @endsection
+

@@ -102,7 +102,7 @@
     /* ---------- Conteneur ---------- */
 
     .admin-container {
-        @apply mx-auto max-w-[1200px] px-5;
+        @apply mx-auto max-w-[1680px] px-5;
     }
 
     .admin-content {
@@ -242,15 +242,83 @@
     }
 
     .admin-table thead th {
-        @apply whitespace-nowrap px-[18px] py-3.5 text-left text-[0.82rem] font-semibold uppercase tracking-[0.3px] text-white;
+        @apply whitespace-nowrap px-3 py-3 text-left text-[0.76rem] font-semibold uppercase tracking-[0.3px] text-white;
     }
 
     .admin-table tbody td {
-        @apply border-t border-pq-border px-[18px] py-3 align-top text-pq-text;
+        @apply whitespace-nowrap border-t border-pq-border px-3 py-2.5 align-top text-[0.84rem] text-pq-text;
     }
 
     .admin-table tbody tr:hover {
         background: rgba(34, 197, 94, 0.05);
+    }
+
+    /* Colonnes texte libre (email, entreprise, titres) : tronquees plutot que d'elargir la ligne */
+
+    .admin-cell-clip {
+        @apply inline-block max-w-[90px] overflow-hidden align-bottom;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+    }
+
+    /* Contenu qu'on veut garder entier (ex. titre) : revient a la ligne dans une largeur fixe plutot que tronque */
+
+    .admin-cell-wrap {
+        @apply inline-block max-w-[260px] align-bottom;
+        white-space: normal;
+        overflow-wrap: break-word;
+        vertical-align: middle;
+    }
+
+    /* Titre tronque sur une seule ligne, avec plus de largeur que .admin-cell-clip */
+
+    .admin-cell-clip-title {
+        @apply inline-block max-w-[420px] overflow-hidden align-bottom;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+    }
+
+    .admin-newsletter-table {
+        @apply min-w-0 table-fixed;
+    }
+
+    .admin-newsletter-table th:first-child,
+    .admin-newsletter-table td:first-child {
+        width: 54%;
+        white-space: normal;
+    }
+
+    .admin-newsletter-table th:nth-child(2),
+    .admin-newsletter-table td:nth-child(2) {
+        width: 12%;
+    }
+
+    .admin-newsletter-table th:nth-child(3),
+    .admin-newsletter-table td:nth-child(3) {
+        width: 10%;
+        text-align: center;
+    }
+
+    .admin-newsletter-table th:nth-child(4),
+    .admin-newsletter-table td:nth-child(4) {
+        width: 16%;
+    }
+
+    .admin-newsletter-table th:last-child,
+    .admin-newsletter-table td:last-child {
+        width: 8%;
+    }
+
+    .admin-newsletter-title {
+        display: block;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .admin-newsletter-status {
+        @apply inline-flex items-center justify-center;
     }
 
     .admin-table-empty {
@@ -283,7 +351,7 @@
     /* Actions compactes dans les tableaux uniquement */
 
     .admin-table .admin-action {
-        @apply border px-2.5 py-1.5 text-[0.8rem] leading-none;
+        @apply border px-2 py-1.5 text-[0.8rem] leading-none;
     }
 
     .admin-table .admin-btn {
@@ -292,6 +360,15 @@
 
     .admin-table .admin-select {
         @apply min-w-[150px] px-2.5 py-1.5 text-[0.82rem];
+    }
+
+    .admin-inline-form {
+        @apply inline-flex items-center m-0;
+    }
+
+    .admin-table .admin-action-reset {
+        @apply border-0 bg-transparent p-0;
+        cursor: pointer;
     }
 
     /* ---------- Badges ---------- */
@@ -345,7 +422,8 @@
 
     .pastille-verte,
     .pastille-jaune,
-    .pastille-rouge {
+    .pastille-rouge,
+    .pastille-bleue {
         @apply inline-block h-[0.6rem] w-[0.6rem] shrink-0 rounded-full align-middle;
     }
 
@@ -359,6 +437,10 @@
 
     .pastille-rouge {
         @apply bg-red-600 shadow-pq-dot-red;
+    }
+
+    .pastille-bleue {
+        @apply bg-pq-teal shadow-pq-dot-blue;
     }
 
     /* ---------- Fiches de details ---------- */
@@ -449,6 +531,33 @@
     .admin-modal-actions {
         @apply mt-7 flex justify-center gap-3;
     }
+
+     /* ---------- Menus déroulants ---------- */
+
+    .admin-dropdown {
+        @apply relative;
+    }
+
+    .admin-dropdown-menu {
+        @apply absolute left-0 top-full z-50 hidden min-w-[230px] rounded-[10px] border border-pq-border bg-white py-2;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .admin-dropdown:hover .admin-dropdown-menu {
+        @apply block;
+    }
+
+    .admin-dropdown-item {
+        @apply block px-4 py-2 text-[0.88rem] text-pq-text no-underline transition-colors duration-200;
+    }
+
+    .admin-dropdown-item:hover {
+        @apply bg-pq-bg text-pq-teal;
+    }
+
+    .admin-dropdown-item-active {
+        @apply bg-pq-bg font-semibold text-pq-teal;
+    }
 }
 
 @keyframes admin-modal-in {
@@ -471,8 +580,11 @@
 
 @media (max-width: 640px) {
     .admin-container { padding-left: 12px; padding-right: 12px; }
-    .admin-table { min-width: 700px; }
+    .admin-table:not(.admin-newsletter-table) { min-width: 700px; }
     .admin-table .admin-action { padding: 6px 9px; }
+    .admin-newsletter-table { font-size: 0.72rem; }
+    .admin-newsletter-table thead th,
+    .admin-newsletter-table tbody td { padding: 8px 6px; }
 }
 
 .admin-table-box::-webkit-scrollbar { height: 8px; }
