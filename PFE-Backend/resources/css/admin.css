@@ -343,28 +343,23 @@
 
     /* ---------- Pastilles de statut ---------- */
 
-   .pastille-verte,
-.pastille-jaune,
-.pastille-rouge,
-.pastille-bleue {
-    @apply inline-block h-[0.6rem] w-[0.6rem] shrink-0 rounded-full align-middle;
-}
+    .pastille-verte,
+    .pastille-jaune,
+    .pastille-rouge {
+        @apply inline-block h-[0.6rem] w-[0.6rem] shrink-0 rounded-full align-middle;
+    }
 
-.pastille-verte {
-    @apply bg-pq-green shadow-pq-dot-green;
-}
+    .pastille-verte {
+        @apply bg-pq-green shadow-pq-dot-green;
+    }
 
-.pastille-jaune {
-    @apply bg-yellow-500 shadow-pq-dot-yellow;
-}
+    .pastille-jaune {
+        @apply bg-yellow-500 shadow-pq-dot-yellow;
+    }
 
-.pastille-rouge {
-    @apply bg-red-600 shadow-pq-dot-red;
-}
-
-.pastille-bleue {
-    @apply bg-pq-teal shadow-pq-dot-blue;
-}
+    .pastille-rouge {
+        @apply bg-red-600 shadow-pq-dot-red;
+    }
 
     /* ---------- Fiches de details ---------- */
 
@@ -453,33 +448,6 @@
 
     .admin-modal-actions {
         @apply mt-7 flex justify-center gap-3;
-    }
-
-     /* ---------- Menus déroulants ---------- */
-
-    .admin-dropdown {
-        @apply relative;
-    }
-
-    .admin-dropdown-menu {
-        @apply absolute left-0 top-full z-50 hidden min-w-[230px] rounded-[10px] border border-pq-border bg-white py-2;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    }
-
-    .admin-dropdown:hover .admin-dropdown-menu {
-        @apply block;
-    }
-
-    .admin-dropdown-item {
-        @apply block px-4 py-2 text-[0.88rem] text-pq-text no-underline transition-colors duration-200;
-    }
-
-    .admin-dropdown-item:hover {
-        @apply bg-pq-bg text-pq-teal;
-    }
-
-    .admin-dropdown-item-active {
-        @apply bg-pq-bg font-semibold text-pq-teal;
     }
 }
 

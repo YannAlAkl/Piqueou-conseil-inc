@@ -29,11 +29,17 @@
                 @forelse ($questionnaires as $questionnaire)
                     <tr>
                         <td>{{ $questionnaire->user->name }}</td>
-                        <td>{{ $questionnaire->user->company_name ?? '-' }}</td>
+                        <td>
+                            @if ($questionnaire->user->company_name)
+                                <span class="admin-cell-clip"
+                                    title="{{ $questionnaire->user->company_name }}">{{ $questionnaire->user->company_name }}</span>
+                            @endif
+                        </td>
                         <td>{{ $questionnaire->questionnaire->title }}</td>
                         <td>
                             @if ($questionnaire->status === 'under_review')
-                                <span class="admin-legend-item" title="En analyse"><span class="pastille-bleue"></span></span>
+                                <span class="admin-legend-item" title="En analyse"><span
+                                        class="pastille-bleue"></span></span>
                             @else
                                 <span class="admin-legend-item" title="Terminé"><span class="pastille-verte"></span></span>
                             @endif

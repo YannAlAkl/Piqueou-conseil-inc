@@ -46,28 +46,36 @@
             <tbody>
                 @forelse ($newsletters as $newsletter)
                     <tr>
-                        <td>{{ $newsletter->title }}</td>
+                        <td><span class="admin-cell-wrap">{{ $newsletter->title }}</span></td>
                         <td>{{ $newsletter->nomCategorie() }}</td>
                         <td>
                             @if ($newsletter->status === 'published')
-                                <span class="admin-legend-item" title="Publiée"><span class="pastille-verte"></span></span>
+                                <span class="admin-badge admin-badge-green">Publiée</span>
                             @else
-                                <span class="admin-legend-item" title="Brouillon"><span
-                                        class="pastille-jaune"></span></span>
+                                <span class="admin-badge admin-badge-yellow">Brouillon</span>
                             @endif
                         </td>
                         <td>{{ $newsletter->sent_at ? $newsletter->sent_at->format('d/m/Y H:i') : '-' }}</td>
                         <td>
-                            <a href="{{ route('admin.newsletter.edit', $newsletter->id) }}"
-                                class="admin-btn admin-btn-blue">Modifier</a>
+                            <div class="flex items-center gap-3">
 
-                            <form method="POST" action="{{ route('admin.newsletter.destroy', $newsletter->id) }}"
-                                class="inline-flex items-center m-0"
-                                onsubmit="return ouvrirModal(this, 'Supprimer cette newsletter', 'Cette action est définitive.', 'Supprimer', 'admin-btn-red')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="admin-btn admin-btn-red">Supprimer</button>
-                            </form>
+                                <a href="{{ route('admin.newsletter.edit', $newsletter->id) }}"
+                                    class="admin-action admin-action-yellow" title="Modifier">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+
+                                <form method="POST" action="{{ route('admin.newsletter.destroy', $newsletter->id) }}"
+                                    class="admin-inline-form"
+                                    onsubmit="return ouvrirModal(this, 'Supprimer cette newsletter', 'Cette action est définitive.', 'Supprimer', 'admin-btn-red')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="admin-action admin-action-red admin-action-reset"
+                                        title="Supprimer">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </form>
+
+                            </div>
                         </td>
                     </tr>
                 @empty

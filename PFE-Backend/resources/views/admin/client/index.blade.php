@@ -9,20 +9,20 @@
 
 @section('content')
 
-<div class="admin-legend">
-    <span class="admin-legend-item">
-        <span class="pastille-verte"></span>
-        Actif
-    </span>
-    <span class="admin-legend-item">
-        <span class="pastille-jaune"></span>
-        En attente
-    </span>
-    <span class="admin-legend-item">
-        <span class="pastille-rouge"></span>
-        Inactif
-    </span>
-</div>
+    <div class="admin-legend">
+        <span class="admin-legend-item">
+            <span class="pastille-verte"></span>
+            Actif
+        </span>
+        <span class="admin-legend-item">
+            <span class="pastille-jaune"></span>
+            En attente
+        </span>
+        <span class="admin-legend-item">
+            <span class="pastille-rouge"></span>
+            Inactif
+        </span>
+    </div>
 
     <div class="admin-table-box">
         <table class="admin-table">
@@ -49,7 +49,8 @@
                             @if ($client->account_status === 'active')
                                 <span class="admin-legend-item" title="Actif"><span class="pastille-verte"></span></span>
                             @elseif ($client->account_status === 'pending')
-                                <span class="admin-legend-item" title="En attente"><span class="pastille-jaune"></span></span>
+                                <span class="admin-legend-item" title="En attente"><span
+                                        class="pastille-jaune"></span></span>
                             @else
                                 <span class="admin-legend-item" title="Inactif"><span class="pastille-rouge"></span></span>
                             @endif
@@ -57,12 +58,18 @@
                         <td>
                             @if ($client->email_verified_at)
                                 Oui
-                                <span class="block text-xs text-gray-400">{{ $client->email_verified_at->format('d/m/Y') }}</span>
+                                <span
+                                    class="block text-xs text-gray-400">{{ $client->email_verified_at->format('d/m/Y') }}</span>
                             @else
                                 Non
                             @endif
                         </td>
-                        <td>{{ $client->company_name ?? '-' }}</td>
+                        <td>
+                            @if ($client->company_name)
+                                <span class="admin-cell-clip"
+                                    title="{{ $client->company_name }}">{{ $client->company_name }}</span>
+                            @endif
+                        </td>
                         <td>{{ $client->phone ?? '-' }}</td>
                         <td>
                             @if ($client->wants_newsletter)
@@ -76,33 +83,38 @@
                         </td>
                         <td>{{ $client->created_at->format('d/m/Y H:i') }}</td>
                         <td>
-                            <div class="flex items-center gap-3" style="display: flex; gap: 10px; align-items: center; white-space: nowrap;">
+                            <div class="flex items-center gap-3"
+                                style="display: flex; gap: 10px; align-items: center; white-space: nowrap;">
 
-                                <a href="{{ route('admin.client.show', $client->id) }}" class="admin-action admin-action-blue" title="Voir">
+                                <a href="{{ route('admin.client.show', $client->id) }}"
+                                    class="admin-action admin-action-blue" title="Voir">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
 
-                                <a href="{{ route('admin.client.edit', $client->id) }}" class="admin-action admin-action-yellow" title="Modifier">
+                                <a href="{{ route('admin.client.edit', $client->id) }}"
+                                    class="admin-action admin-action-yellow" title="Modifier">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
 
                                 @if ($client->account_status !== 'active')
                                     <form method="POST" action="{{ route('admin.client.activate', $client->id) }}"
-                                          onsubmit="return ouvrirModal(this, 'Activer ce compte', 'Le client pourra se connecter et un email de vérification lui sera envoyé.', 'Activer le compte', 'admin-btn-green')"
-                                          style="display: inline; margin: 0;">
+                                        onsubmit="return ouvrirModal(this, 'Activer ce compte', 'Le client pourra se connecter et un email de vérification lui sera envoyé.', 'Activer le compte', 'admin-btn-green')"
+                                        style="display: inline; margin: 0;">
                                         @csrf
-                                        <button type="submit" class="admin-action admin-action-green" title="Activer" style="background: none; border: none; cursor: pointer; padding: 0;">
+                                        <button type="submit" class="admin-action admin-action-green" title="Activer"
+                                            style="background: none; border: none; cursor: pointer; padding: 0;">
                                             <i class="fa-solid fa-circle-check"></i>
                                         </button>
                                     </form>
                                 @endif
 
                                 <form method="POST" action="{{ route('admin.client.destroy', $client->id) }}"
-                                      onsubmit="return ouvrirModal(this, 'Supprimer ce client', 'Le compte et toutes ses réponses au questionnaire seront définitivement supprimés. Cette action est irréversible. Vous pouver le desactiver si vous souhaitez en passant vers modifier', 'Supprimer définitivement', 'admin-btn-red')"
-                                      style="display: inline; margin: 0;">
+                                    onsubmit="return ouvrirModal(this, 'Supprimer ce client', 'Le compte et toutes ses réponses au questionnaire seront définitivement supprimés. Cette action est irréversible. Vous pouver le desactiver si vous souhaitez en passant vers modifier', 'Supprimer définitivement', 'admin-btn-red')"
+                                    style="display: inline; margin: 0;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="admin-action admin-action-red" title="Supprimer" style="background: none; border: none; cursor: pointer; padding: 0;">
+                                    <button type="submit" class="admin-action admin-action-red" title="Supprimer"
+                                        style="background: none; border: none; cursor: pointer; padding: 0;">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </form>

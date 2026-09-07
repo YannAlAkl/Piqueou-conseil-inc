@@ -58,6 +58,7 @@ export default {
                 'pq-dot-green': '0 0 0 3px rgba(34, 197, 94, 0.18)',
                 'pq-dot-yellow': '0 0 0 3px rgba(234, 179, 8, 0.18)',
                 'pq-dot-red': '0 0 0 3px rgba(220, 38, 38, 0.18)',
+                'pq-dot-blue': '0 0 0 3px rgba(1, 136, 128, 0.18)',
             },
             backgroundImage: {
                 'pq-nav': 'linear-gradient(180deg, #0f172a 0%, #111f3a 100%)',

@@ -36,7 +36,12 @@
                 @forelse ($soumissions as $soumission)
                     <tr>
                         <td>{{ $soumission->user->name }}</td>
-                        <td>{{ $soumission->user->company_name ?? '-' }}</td>
+                        <td>
+                            @if ($soumission->user->company_name)
+                                <span class="admin-cell-clip"
+                                    title="{{ $soumission->user->company_name }}">{{ $soumission->user->company_name }}</span>
+                            @endif
+                        </td>
                         <td>{{ $soumission->questionnaire->title }}</td>
                         <td>{{ $soumission->submitted_at ? $soumission->submitted_at->format('d/m/Y H:i') : '-' }}</td>
                         <td>
