@@ -6761,3 +6761,15 @@ section,
     height: 84px;
   }
 }
+
+.service-hero-icon-bi {
+  color: var(--accent-color);
+  font-size: 5.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .service-hero-icon-bi {
+    font-size: 3.8rem;
+  }
+}
