@@ -6705,3 +6705,58 @@ section,
 .lang-dropdown:hover .dropbtn .arrow::before {
   color: #4ade80;
 }
+/* Bootstrap Icons badges & stage icons for certification pages */
+.cert-badge-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  color: var(--accent-color);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.cert-stage-icon {
+  color: var(--accent-color);
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+/* Dedicated icon visual replacing the repeated stock-photo slider on service pages */
+.service-hero-visual {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 90%) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 97%) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-hero-icon {
+  width: 120px;
+  height: 120px;
+  color: var(--accent-color);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .service-hero-icon {
+    width: 84px;
+    height: 84px;
+  }
+}
