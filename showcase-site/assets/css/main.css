@@ -10,11 +10,11 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444d4d; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #003a36; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #018880; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #1f3d16; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #78b246; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -26,7 +26,7 @@
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444d4d; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #018880; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #78b246; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -37,28 +37,28 @@
 }
 
 .dark-background {
-  --background-color: #005751;
+  --background-color: #1f3d16;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --accent-color: #ffffff;
   --surface-color: #252525;
-  --contrast-color: #018880;
+  --contrast-color: #78b246;
 }
 
 .homesection {
-  --background-color: #0f172a;
-  --default-color: #cbd5e1;
+  --background-color: #12261a;
+  --default-color: #d8e6d3;
   --heading-color: #f8fafc;
-  --accent-color: #22c55e;
-  --surface-color: #1e293b;
+  --accent-color: #78b246;
+  --surface-color: #1a3323;
   --contrast-color: #ffffff;
 }
 
 .scrollingsections {
   --background-color: #f1f5f9;
   --default-color: #475569;
-  --heading-color: #0f172a;
-  --accent-color: #22c55e;
+  --heading-color: #1f3d16;
+  --accent-color: #78b246;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
 }
@@ -161,11 +161,11 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #0f172a;
-  --default-color: #cbd5e1;
+  --background-color: #12261a;
+  --default-color: #d8e6d3;
   --heading-color: #f8fafc;
-  --accent-color: #22c55e;
-  --surface-color: #1e293b;
+  --accent-color: #78b246;
+  --surface-color: #1a3323;
   --contrast-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
@@ -202,7 +202,7 @@ h6 {
 }
 
 .header .logo .sitename span {
-  color: var(--accent-color, #22c55e);
+  color: var(--accent-color, #78b246);
 }
 
 .scrolled .header {
@@ -212,11 +212,11 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #0f172a;
-  --default-color: #cbd5e1;
+  --background-color: #12261a;
+  --default-color: #d8e6d3;
   --heading-color: #f8fafc;
-  --accent-color: #22c55e;
-  --surface-color: #1e293b;
+  --accent-color: #78b246;
+  --surface-color: #1a3323;
   --contrast-color: #ffffff;
 }
 
@@ -5735,7 +5735,7 @@ section,
 }
 
 .lang-btn.active {
-  border-color: var(--accent-color, #22c55e); /* Indique la langue sélectionnée */
+  border-color: var(--accent-color, #78b246); /* Indique la langue sélectionnée */
 }
 
 /* Conteneur principal */
@@ -5767,7 +5767,7 @@ section,
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #0f172a;
+  background-color: #12261a;
   min-width: 100px;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
   z-index: 1;
@@ -5841,7 +5841,7 @@ section,
   top: 100%;
   left: 0;
   right: 0;
-  background: #0f172a;
+  background: #12261a;
   border: none;
   border-radius: 4px;
   z-index: 99;
@@ -6405,8 +6405,8 @@ section,
   position: sticky !important;
   top: 0;
   padding: 12px 0;
-  background: linear-gradient(180deg, #0f172a 0%, #111f3a 100%);
-  border-bottom: 1px solid rgba(34, 197, 94, 0.12);
+  background: linear-gradient(180deg, #12261a 0%, #16301f 100%);
+  border-bottom: 1px solid rgba(120, 178, 70, 0.12);
   transition: all 0.4s ease;
 }
 
@@ -6415,7 +6415,7 @@ section,
   background: rgba(15, 23, 42, 0.85);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid rgba(34, 197, 94, 0.25);
+  border-bottom: 1px solid rgba(120, 178, 70, 0.25);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   padding: 8px 0;
 }
@@ -6431,7 +6431,7 @@ section,
   transition: color 0.3s ease;
 }
 .header .logo .sitename span {
-  color: var(--accent-color, #22c55e);
+  color: var(--accent-color, #78b246);
 }
 
 /* Logo profil (icône compte) — taille et couleur IDENTIQUES sur toutes les pages.
@@ -6472,7 +6472,7 @@ section,
     bottom: 2px;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #22c55e, #4ade80);
+    background: linear-gradient(90deg, #78b246, #8fc95a);
     border-radius: 2px;
     transition: width 0.3s ease;
   }
@@ -6496,15 +6496,15 @@ section,
   }
   .navmenu li:hover > a i.bi-chevron-down {
     transform: rotate(180deg);
-    color: #22c55e;
+    color: #78b246;
   }
 
   /* Dropdowns raffinés */
   .navmenu .dropdown ul {
-    background: rgba(17, 25, 42, 0.98);
+    background: rgba(18, 38, 26, 0.98);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(120, 178, 70, 0.15);
     border-radius: 12px;
     box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
     padding: 8px;
@@ -6521,7 +6521,7 @@ section,
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover > a {
-    background: rgba(34, 197, 94, 0.14);
+    background: rgba(120, 178, 70, 0.14);
     color: #ffffff;
     padding-left: 18px;
   }
@@ -6553,12 +6553,12 @@ section,
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 .lang-dropdown .dropbtn:hover {
-  background: rgba(34, 197, 94, 0.15);
-  border-color: rgba(34, 197, 94, 0.4);
+  background: rgba(120, 178, 70, 0.15);
+  border-color: rgba(120, 178, 70, 0.4);
 }
 .lang-dropdown .arrow {
   font-size: 10px;
-  color: #22c55e;
+  color: #78b246;
 }
 
 /*--------------------------------------------------------------
@@ -6654,7 +6654,7 @@ section,
     height: auto !important;
     background: none !important;         /* retire le cercle de fond */
     border-radius: 0 !important;
-    color: #22c55e !important;           /* vert accent, cohérent avec le site */
+    color: #78b246 !important;           /* vert accent, cohérent avec le site */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -6665,7 +6665,7 @@ section,
   .navmenu a i.bi-chevron-down:hover,
   .navmenu a:focus i.bi-chevron-down:hover {
     background: none !important;
-    color: #4ade80 !important;
+    color: #8fc95a !important;
   }
 
   /* Rotation douce vers le haut quand on ouvre / survole le menu */
@@ -6674,7 +6674,7 @@ section,
   .navmenu .active:focus i.bi-chevron-down {
     transform: rotate(180deg) !important;
     background: none !important;
-    color: #4ade80 !important;
+    color: #8fc95a !important;
   }
 }
 
@@ -6695,7 +6695,7 @@ section,
   content: "\F282";                     /* chevron-down de Bootstrap Icons */
   font-family: "bootstrap-icons" !important;
   font-size: 13px;                      /* même taille que les autres chevrons */
-  color: #22c55e;                       /* même vert d'accent */
+  color: #78b246;                       /* même vert d'accent */
   line-height: 1;
 }
 /* Rotation au survol, comme les autres menus */
@@ -6703,7 +6703,7 @@ section,
   transform: rotate(180deg);
 }
 .lang-dropdown:hover .dropbtn .arrow::before {
-  color: #4ade80;
+  color: #8fc95a;
 }
 /* Bootstrap Icons badges & stage icons for certification pages */
 .cert-badge-icon {
