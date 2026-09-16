@@ -32,7 +32,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #eaf5e2;
+  --background-color: #f8f9fa;
   --surface-color: #ffffff;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .scrollingsections {
-  --background-color: #eaf5e2;
+  --background-color: #f8f9fa;
   --default-color: #475569;
   --heading-color: #1f3d16;
   --accent-color: #78b246;
