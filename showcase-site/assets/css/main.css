@@ -32,7 +32,7 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f1f8f7;
+  --background-color: #eaf5e2;
   --surface-color: #ffffff;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .scrollingsections {
-  --background-color: #f1f5f9;
+  --background-color: #eaf5e2;
   --default-color: #475569;
   --heading-color: #1f3d16;
   --accent-color: #78b246;
@@ -697,8 +697,8 @@ section,
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  background: var(--accent-color);
+  color: var(--contrast-color);
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
@@ -1381,7 +1381,7 @@ section,
 }
 
 .services .service-card:hover .icon-box {
-  background-color: var(--accent-color);
+  background-color: #5f9236;
   color: var(--contrast-color);
 }
 
@@ -1389,8 +1389,8 @@ section,
   width: 70px;
   height: 70px;
   border-radius: 10px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1531,8 +1531,8 @@ section,
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1542,8 +1542,7 @@ section,
 }
 
 .why-choose-us .features-content .features-list .feature-item .feature-icon:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: #5f9236;
   transform: translateY(-5px);
 }
 
@@ -2269,7 +2268,7 @@ section,
   width: 50px;
   height: 50px;
   flex-shrink: 0;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -2278,7 +2277,7 @@ section,
 
 .contact .contact-card .icon-box i {
   font-size: 22px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .contact .contact-card .contact-text h4 {
@@ -2512,13 +2511,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details-4 .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details-4 .features .feature-item .feature-content h5 {
@@ -2788,13 +2787,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details-3 .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details-3 .features .feature-item .feature-content h5 {
@@ -3064,13 +3063,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details .features .feature-item .feature-content h5 {
@@ -3340,13 +3339,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details-2 .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details-2 .features .feature-item .feature-content h5 {
@@ -3616,13 +3615,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details-5 .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details-5 .features .feature-item .feature-content h5 {
@@ -3887,13 +3886,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details-6 .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details-6 .features .feature-item .feature-content h5 {
@@ -5418,13 +5417,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: var(--accent-color);
   border-radius: 50%;
 }
 
 .service-details-7 .features .feature-item .icon i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .service-details-7 .features .feature-item .feature-content h5 {
