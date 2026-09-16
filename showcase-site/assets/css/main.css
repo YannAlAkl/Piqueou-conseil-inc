@@ -4240,7 +4240,8 @@ section,
 }
 
 .certifications .achievements-banner .achievement-item h3 {
-  font-size: 2.8rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -4315,7 +4316,7 @@ section,
   }
 
   .certifications .achievements-banner .achievement-item h3 {
-    font-size: 2.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -4492,7 +4493,8 @@ section,
 }
 
 .certifications-2 .achievements-banner .achievement-item h3 {
-  font-size: 2.8rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -4567,7 +4569,7 @@ section,
   }
 
   .certifications-2 .achievements-banner .achievement-item h3 {
-    font-size: 2.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -4744,7 +4746,8 @@ section,
 }
 
 .certifications-3 .achievements-banner .achievement-item h3 {
-  font-size: 2.8rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -4819,7 +4822,7 @@ section,
   }
 
   .certifications-3 .achievements-banner .achievement-item h3 {
-    font-size: 2.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -4996,7 +4999,8 @@ section,
 }
 
 .certifications-4 .achievements-banner .achievement-item h3 {
-  font-size: 2.8rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -5071,7 +5075,7 @@ section,
   }
 
   .certifications-4 .achievements-banner .achievement-item h3 {
-    font-size: 2.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -5248,7 +5252,8 @@ section,
 }
 
 .certifications-5 .achievements-banner .achievement-item h3 {
-  font-size: 2.8rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -5323,7 +5328,7 @@ section,
   }
 
   .certifications-5 .achievements-banner .achievement-item h3 {
-    font-size: 2.2rem;
+    font-size: 1.25rem;
   }
 }
 
