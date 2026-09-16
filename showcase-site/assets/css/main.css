@@ -4240,8 +4240,9 @@ section,
 }
 
 .certifications .achievements-banner .achievement-item h3 {
-  font-size: 1.5rem;
-  overflow-wrap: anywhere;
+  font-size: clamp(1.05rem, 1vw + 0.7rem, 1.5rem);
+  overflow-wrap: break-word;
+  word-break: normal;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -4493,8 +4494,9 @@ section,
 }
 
 .certifications-2 .achievements-banner .achievement-item h3 {
-  font-size: 1.5rem;
-  overflow-wrap: anywhere;
+  font-size: clamp(1.05rem, 1vw + 0.7rem, 1.5rem);
+  overflow-wrap: break-word;
+  word-break: normal;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -4746,8 +4748,9 @@ section,
 }
 
 .certifications-3 .achievements-banner .achievement-item h3 {
-  font-size: 1.5rem;
-  overflow-wrap: anywhere;
+  font-size: clamp(1.05rem, 1vw + 0.7rem, 1.5rem);
+  overflow-wrap: break-word;
+  word-break: normal;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -4999,8 +5002,9 @@ section,
 }
 
 .certifications-4 .achievements-banner .achievement-item h3 {
-  font-size: 1.5rem;
-  overflow-wrap: anywhere;
+  font-size: clamp(1.05rem, 1vw + 0.7rem, 1.5rem);
+  overflow-wrap: break-word;
+  word-break: normal;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
@@ -5252,8 +5256,9 @@ section,
 }
 
 .certifications-5 .achievements-banner .achievement-item h3 {
-  font-size: 1.5rem;
-  overflow-wrap: anywhere;
+  font-size: clamp(1.05rem, 1vw + 0.7rem, 1.5rem);
+  overflow-wrap: break-word;
+  word-break: normal;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 0.5rem;
