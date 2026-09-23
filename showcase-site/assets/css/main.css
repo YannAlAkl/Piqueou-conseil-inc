@@ -6713,6 +6713,48 @@ section,
   background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.14) 2px, transparent 2px, transparent 18px);
 }
 
+/* Appel à l'action en bas des pages de certification (CMMC, ISO 27001, SOC 2, NIS2, Loi 25) */
+.cert-cta {
+  margin-top: 60px;
+  padding: 48px 40px;
+  border-radius: 12px;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  text-align: center;
+}
+
+.cert-cta h3 {
+  margin-bottom: 12px;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+}
+
+.cert-cta p {
+  max-width: 560px;
+  margin: 0 auto 24px;
+  color: var(--default-color);
+}
+
+.cert-cta .btn-cert-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 13px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cert-cta .btn-cert-cta:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 /* Bootstrap Icons badges & stage icons for certification pages */
 .cert-badge-icon {
   width: 80px;
