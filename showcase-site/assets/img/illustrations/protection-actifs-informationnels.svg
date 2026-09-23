@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" role="img" aria-labelledby="protectionTitle">
+  <title id="protectionTitle">Bouclier protégeant les actifs informationnels : documents, serveurs et cloud</title>
+
+  <rect x="10" y="10" width="500" height="440" rx="16" fill="#ffffff" />
+  <path d="M10 26a16 16 0 0 1 16-16h468a16 16 0 0 1 16 16v30H10z" fill="#78b246" />
+  <circle cx="34" cy="41" r="5" fill="#eafbe0" />
+  <circle cx="50" cy="41" r="5" fill="#eafbe0" />
+  <circle cx="66" cy="41" r="5" fill="#ffffff" />
+  <text x="88" y="46" font-size="13" fill="#f2fbec" font-family="'Courier New', monospace">protection-actifs.piqueou</text>
+
+  <!-- Lignes de connexion bouclier -> actifs protégés -->
+  <line x1="228" y1="175" x2="392" y2="135" stroke="#cfe6bd" stroke-width="2" />
+  <line x1="238" y1="215" x2="416" y2="240" stroke="#cfe6bd" stroke-width="2" />
+  <line x1="212" y1="255" x2="388" y2="340" stroke="#cfe6bd" stroke-width="2" />
+
+  <!-- Bouclier plein (vert), avec cadenas -->
+  <path d="M175 100 l60 24 v50 c0 52 -34 87 -60 98 -26 -11 -60 -46 -60 -98 v-50 z" fill="#78b246" stroke="#1f3d16" stroke-width="3" />
+  <rect x="156" y="196" width="38" height="30" rx="4" fill="#ffffff" />
+  <path d="M163 196v-16a12.5 12.5 0 0 1 25 0v16" fill="none" stroke="#ffffff" stroke-width="4.5" />
+  <circle cx="175" cy="210" r="3.6" fill="#1f3d16" />
+
+  <!-- Actif : document -->
+  <circle cx="392" cy="135" r="29" fill="#78b246" />
+  <path d="M380 120h15l8 8v21h-23z" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linejoin="round" />
+  <path d="M395 120v8h8" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linejoin="round" />
+
+  <!-- Actif : serveur / base de données -->
+  <circle cx="416" cy="240" r="29" fill="#78b246" />
+  <rect x="401" y="226" width="30" height="10" rx="2" fill="none" stroke="#ffffff" stroke-width="2.3" />
+  <rect x="401" y="240" width="30" height="10" rx="2" fill="none" stroke="#ffffff" stroke-width="2.3" />
+  <circle cx="407" cy="231" r="1.6" fill="#ffffff" />
+  <circle cx="407" cy="245" r="1.6" fill="#ffffff" />
+
+  <!-- Actif : cloud -->
+  <circle cx="388" cy="340" r="29" fill="#78b246" />
+  <path d="M371 347a9.3 9.3 0 0 1 9.3-14 11.6 11.6 0 0 1 22 2.3 7.5 7.5 0 0 1-2.3 14.5h-24.4a7 7 0 0 1-4.6-2.8z" fill="none" stroke="#ffffff" stroke-width="2.3" />
+
+  <text x="250" y="400" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="0.5" fill="#3f6b28" font-family="'Courier New', monospace">&#201;TAT DE PROTECTION DES ACTIFS INFORMATIONNELS</text>
+</svg>

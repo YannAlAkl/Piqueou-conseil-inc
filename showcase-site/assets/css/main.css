@@ -21,8 +21,8 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: rgba(255, 255, 255, 0.7);  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: rgba(13, 26, 10, 0.75);  /* The default color of the main navmenu links */
+  --nav-hover-color: #0d1a0a; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444d4d; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -161,11 +161,11 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #12261a;
-  --default-color: #d8e6d3;
-  --heading-color: #f8fafc;
-  --accent-color: #78b246;
-  --surface-color: #1a3323;
+  --background-color: #78b246;
+  --default-color: #14290e;
+  --heading-color: #0d1a0a;
+  --accent-color: #0d1a0a;
+  --surface-color: #eaf5e0;
   --contrast-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
@@ -196,13 +196,15 @@ h6 {
   font-size: 22px;
   margin: 0;
   font-weight: 700;
-  color: #ffffff;
+  color: #0d1a0a;
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
 .header .logo .sitename span {
-  color: var(--accent-color, #78b246);
+  color: var(--accent-color, #14290e);
+  font-weight: 500;
+  opacity: 0.75;
 }
 
 .scrolled .header {
@@ -212,11 +214,11 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #12261a;
-  --default-color: #d8e6d3;
-  --heading-color: #f8fafc;
-  --accent-color: #78b246;
-  --surface-color: #1a3323;
+  --background-color: #78b246;
+  --default-color: #14290e;
+  --heading-color: #0d1a0a;
+  --accent-color: #0d1a0a;
+  --surface-color: #eaf5e0;
   --contrast-color: #ffffff;
 }
 
@@ -6404,18 +6406,18 @@ section,
   position: sticky !important;
   top: 0;
   padding: 12px 0;
-  background: linear-gradient(180deg, #12261a 0%, #16301f 100%);
-  border-bottom: 1px solid rgba(120, 178, 70, 0.12);
+  background: linear-gradient(180deg, #7fb84f 0%, #6fa63c 100%);
+  border-bottom: 1px solid rgba(13, 26, 10, 0.15);
   transition: all 0.4s ease;
 }
 
 /* Effet glassmorphism + ombre douce au scroll */
 .scrolled .header {
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(120, 178, 70, 0.92);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid rgba(120, 178, 70, 0.25);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(13, 26, 10, 0.2);
+  box-shadow: 0 8px 30px rgba(13, 26, 10, 0.25);
   padding: 8px 0;
 }
 
@@ -6430,7 +6432,7 @@ section,
   transition: color 0.3s ease;
 }
 .header .logo .sitename span {
-  color: var(--accent-color, #78b246);
+  color: var(--accent-color, #14290e);
 }
 
 /* Logo profil (icône compte) — taille et couleur IDENTIQUES sur toutes les pages.
@@ -6471,7 +6473,7 @@ section,
     bottom: 2px;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #78b246, #8fc95a);
+    background: linear-gradient(90deg, #0d1a0a, #14290e);
     border-radius: 2px;
     transition: width 0.3s ease;
   }
@@ -6486,7 +6488,7 @@ section,
   .navmenu li:hover > a:not(.account-icon),
   .navmenu .active:not(.account-icon),
   .navmenu .active:focus:not(.account-icon) {
-    color: #ffffff;
+    color: #0d1a0a;
   }
 
   /* Icônes chevron (uniquement les chevrons, pas l'icône profil) */
@@ -6495,7 +6497,7 @@ section,
   }
   .navmenu li:hover > a i.bi-chevron-down {
     transform: rotate(180deg);
-    color: #78b246;
+    color: #0d1a0a;
   }
 
   /* Dropdowns raffinés */
@@ -6541,8 +6543,8 @@ section,
 
 /* Sélecteur de langue */
 .lang-dropdown .dropbtn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(13, 26, 10, 0.08);
+  border: 1px solid rgba(13, 26, 10, 0.18);
   border-radius: 30px;
   padding: 5px 12px;
   display: flex;
@@ -6552,12 +6554,12 @@ section,
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 .lang-dropdown .dropbtn:hover {
-  background: rgba(120, 178, 70, 0.15);
-  border-color: rgba(120, 178, 70, 0.4);
+  background: rgba(13, 26, 10, 0.15);
+  border-color: rgba(13, 26, 10, 0.35);
 }
 .lang-dropdown .arrow {
   font-size: 10px;
-  color: #78b246;
+  color: #0d1a0a;
 }
 
 /*--------------------------------------------------------------
@@ -6653,7 +6655,7 @@ section,
     height: auto !important;
     background: none !important;         /* retire le cercle de fond */
     border-radius: 0 !important;
-    color: #78b246 !important;           /* vert accent, cohérent avec le site */
+    color: #0d1a0a !important;           /* vert très foncé, lisible sur la nav vert clair */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -6664,7 +6666,7 @@ section,
   .navmenu a i.bi-chevron-down:hover,
   .navmenu a:focus i.bi-chevron-down:hover {
     background: none !important;
-    color: #8fc95a !important;
+    color: #14290e !important;
   }
 
   /* Rotation douce vers le haut quand on ouvre / survole le menu */
@@ -6673,7 +6675,7 @@ section,
   .navmenu .active:focus i.bi-chevron-down {
     transform: rotate(180deg) !important;
     background: none !important;
-    color: #8fc95a !important;
+    color: #14290e !important;
   }
 }
 
@@ -6694,7 +6696,7 @@ section,
   content: "\F282";                     /* chevron-down de Bootstrap Icons */
   font-family: "bootstrap-icons" !important;
   font-size: 13px;                      /* même taille que les autres chevrons */
-  color: #78b246;                       /* même vert d'accent */
+  color: #0d1a0a;                       /* vert très foncé, lisible sur la nav vert clair */
   line-height: 1;
 }
 /* Rotation au survol, comme les autres menus */
@@ -6702,8 +6704,15 @@ section,
   transform: rotate(180deg);
 }
 .lang-dropdown:hover .dropbtn .arrow::before {
-  color: #8fc95a;
+  color: #14290e;
 }
+/* Bandeau de transition : renforce la présence du vert entre le hero et le reste du site */
+.protection-banner {
+  height: 56px;
+  background-color: #78b246;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.14) 2px, transparent 2px, transparent 18px);
+}
+
 /* Bootstrap Icons badges & stage icons for certification pages */
 .cert-badge-icon {
   width: 80px;
