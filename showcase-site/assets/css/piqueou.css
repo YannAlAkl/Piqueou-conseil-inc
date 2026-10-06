@@ -91,9 +91,14 @@
     transition: width 0.3s ease;
   }
   .navmenu > ul > li > a:not(.account-icon):hover::before,
-  .navmenu > ul > li:hover > a:not(.account-icon)::before,
-  .navmenu > ul > li > a.active:not(.account-icon)::before {
+  .navmenu > ul > li:hover > a:not(.account-icon)::before {
     width: 100%;
+  }
+  /* Désactive la ligne permanente sur l'élément actif (main.css) */
+  .navmenu .active:before,
+  .navmenu > ul > li > a.active:not(.account-icon)::before {
+    width: 0 !important;
+    visibility: hidden !important;
   }
 }
 h1, h2, h3, h4, h5, h6 { font-weight: 700; }
