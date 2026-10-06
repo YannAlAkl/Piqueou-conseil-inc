@@ -75,6 +75,27 @@
 /* En-tête clair et net, comme ASIMM */
 .header { --background-color: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(0,0,0,0.06); }
 .scrolled .header { box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+
+/* ---------- Nav hover : soulignement à la place du point ---------- */
+@media (min-width: 1200px) {
+  .navmenu > ul > li > a:not(.account-icon)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    border-radius: 0;
+    transition: width 0.3s ease;
+  }
+  .navmenu > ul > li > a:not(.account-icon):hover::before,
+  .navmenu > ul > li:hover > a:not(.account-icon)::before,
+  .navmenu > ul > li > a.active:not(.account-icon)::before {
+    width: 100%;
+  }
+}
 h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 
 body { font-size: 17px; }
