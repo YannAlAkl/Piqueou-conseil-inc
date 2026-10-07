@@ -20,8 +20,13 @@
                     </a>
 
                     @if ($isAdmin)
-                        <a href="{{ route('admin.dashboard') }}" class="text-sm font-medium text-gray-500 hover:text-gray-800">
+                        <a href="{{ route('admin.dashboard') }}"
+                           class="text-sm font-medium {{ request()->routeIs('admin.dashboard') ? 'text-blue-700' : 'text-gray-500 hover:text-gray-800' }}">
                             Administration
+                        </a>
+                        <a href="{{ route('admin.events.index') }}"
+                           class="text-sm font-medium {{ request()->routeIs('admin.events.*') ? 'text-blue-700' : 'text-gray-500 hover:text-gray-800' }}">
+                            Événements
                         </a>
                     @endif
 
