@@ -70,6 +70,11 @@
                             Newsletters
                         </a>
 
+                        <a href="{{ route('admin.events.index') }}"
+                           class="admin-nav-link {{ request()->routeIs('admin.events.*') ? 'admin-nav-link-active' : '' }}">
+                            Événements
+                        </a>
+
                     </div>
 
                 <div class="admin-user">
